@@ -23,7 +23,7 @@ Statistics / Computer Science/ Machine Learning / DataVis
   - ... And projection methods to bring info into 2d!
   - Visualization (web based/interactive but also 3D based!!)
   - Testing (from unit to integration to end-to-end).
-  - Profiling and finding ways to run code faster (a remnant from my C++ days!)
+  - Profiling and finding ways to run code faster 
   - Lisp-family functional languages such as Clojure
   - Functional Languages in general 
 
