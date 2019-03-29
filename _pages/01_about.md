@@ -5,23 +5,19 @@ permalink: /about/
 ---
 
 ## Theodore Manassis 
-
-<img src="https://raw.githubusercontent.com/mamonu/mamonu.github.io/assets/ascii_logo.png" align="center" title="Big Data ONS" width="150" height="150"> 
-
-### Data Scientist at the Office for National Statistics [Big Data](https://onsbigdata.github.io/) team  
+#### Data Scientist at the Office for National Statistics [Big Data](https://onsbigdata.github.io/) team  
 
 
-[_TheodoreM_](https://twitter.com/_TheodoreM_) on ![twitter](http://www.islandcarcentre.co.uk/wp-content/uploads/2016/03/t_small-a.png "twitter")
 
 ```markdown
 
 Interested at the intersection of 
-
 Statistics / Computer Science/ Machine Learning / Data Visualization
 
 - Interests
   - Distributed Computing and programming
-  - Data Science on cluster platforms (Spark/HDFS/Hadoop/YARN/PySpark/Hive/Impala)
+  - Data Science on cluster platforms 
+  - (Spark/HDFS/Hadoop/YARN/PySpark/Hive/Impala)
   - NLP 
   - Python (especially functional programming on python)
   - Graph Databases. Graph/Network Theory
@@ -61,10 +57,3 @@ some projects:
 
   [Profiling and Optimizing python](https://github.com/mamonu/ProfilingOptimizingPy). 
    
-
-
-
-
-
-For more ... 
-check my github repos [here](https://github.com/mamonu).
