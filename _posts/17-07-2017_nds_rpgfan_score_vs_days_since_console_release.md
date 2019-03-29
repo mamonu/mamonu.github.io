@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Correllation between Nintendo DS RPG games and how far into the console’s lifecycle the games were released"
-date:   17-07-2017-07 08:38:07 +0000
+date:   20-03-2019 08:38:07 +0000
 ---
 
 * * *
@@ -9,6 +9,7 @@ date:   17-07-2017-07 08:38:07 +0000
 # Is there a correlation between the review scores of Nintendo DS RPG games and how far into the console’s lifecycle the games were released?
 
 
+(an older post migrated from my Medium blog)
 
 So I have been frequently traveling on trains lately and that means…loads of time to waste watching trees and cows and sheep … or to play some games perhaps on my [Nintendo DS](https://en.wikipedia.org/wiki/Nintendo_DS).
 
