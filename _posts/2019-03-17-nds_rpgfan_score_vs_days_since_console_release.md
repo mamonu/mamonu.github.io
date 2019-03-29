@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Is there a correllation between Nintendo DS RPG games and how far into the console’s lifecycle the games were released"
+title: "Is there a correllation between Nintendo DS RPG games and how far into the console’s lifecycle the games were released?"
 date:   17-03-2019 08:38:07 +0000
 ---
 
@@ -26,7 +26,8 @@ Now this might look easy. Its because pandas .read_html() made it easy to be ab
 
 Anyway… I still needed to make the data more suitable for analysis. What I wanted was the time difference from the day the DS console was released (21-Nov-2004) to the date the game was reviewed. Its pandas time again:
 
-![](https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/NDS/src2img(1).png=1080x200)
+<img src="https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/NDS/src2img(1).png" alt="code" style="width:200px;"/>
+
 
 Firstly I convert the **Date** column I got from the site into the **datetime** type from Pandas. Then I create a variable called **days_since_release** which took a **timestamp** of the date of the release and found the difference between that and the review date available in **datetime**. Then I use the **dt.days** accessor in order to get the number of days out of that and then convert it into a float.
 
