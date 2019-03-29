@@ -7,17 +7,15 @@ permalink: /about/
 ## Theodore Manassis 
 #### Data Scientist at the Office for National Statistics [Big Data](https://onsbigdata.github.io/) team  
 
-
+Interested at the intersection of 
+Statistics / Computer Science/ Machine Learning / DataVis
 
 ```markdown
-
-Interested at the intersection of 
-Statistics / Computer Science/ Machine Learning / Data Visualization
-
 - Interests
+  - Statistics
   - Distributed Computing and programming
   - Data Science on cluster platforms 
-  - (Spark/HDFS/Hadoop/YARN/PySpark/Hive/Impala)
+  - Spark/HDFS/Hadoop/YARN/PySpark/Hive/Impala in CDH
   - NLP 
   - Python (especially functional programming on python)
   - Graph Databases. Graph/Network Theory
@@ -26,7 +24,7 @@ Statistics / Computer Science/ Machine Learning / Data Visualization
   - Testing (from unit to integration to end-to-end). I love pytest and its plugins
   - profiling and finding ways to run code faster (a remnant from my C++ days!)
   - Lisp-family functional languages such as Clojure
-  - Functional Languages in general (monads/monoids and other interesting topics)
+  - Functional Languages in general 
 
 ```
 
