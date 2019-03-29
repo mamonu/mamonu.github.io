@@ -1,8 +1,14 @@
+---
+layout: single
+title: "Correllation between Nintendo DS RPG games and how far into the console’s lifecycle the games were released"
+date:   17-07-2017-07 08:38:07 +0000
+---
+
 * * *
 
 # Is there a correlation between the review scores of Nintendo DS RPG games and how far into the console’s lifecycle the games were released?
 
-[![Go to the profile of mamonu](https://cdn-images-1.medium.com/fit/c/100/100/1*KFXiBfl9EXsOI8qRWCDsNA.jpeg)](https://medium.com/@mamonu?source=post_header_lockup)[mamonu](https://medium.com/@mamonu)<span class="followState js-followState" data-user-id="6adc98b7e190"><button class="button button--smallest u-noUserSelect button--withChrome u-baseColor--buttonNormal button--withHover button--unblock js-unblockButton u-marginLeft10 u-xs-hide" data-action="sign-up-prompt" data-sign-in-action="toggle-block-user" data-requires-token="true" data-redirect="https://medium.com/@mamonu/do-the-scores-of-rpg-games-and-how-late-they-are-released-in-a-consoles-life-cycle-have-a-linear-18d7ff49474c" data-action-source="post_header_lockup"><span class="button-label  button-defaultState">Blocked</span><span class="button-label button-hoverState">Unblock</span></button><button class="button button--primary button--smallest button--dark u-noUserSelect button--withChrome u-accentColor--buttonDark button--follow js-followButton u-marginLeft10 u-xs-hide" data-action="sign-up-prompt" data-sign-in-action="toggle-subscribe-user" data-requires-token="true" data-redirect="https://medium.com/_/subscribe/user/6adc98b7e190" data-action-source="post_header_lockup-6adc98b7e190-------------------------follow_byline"><span class="button-label  button-defaultState js-buttonLabel">Follow</span><span class="button-label button-activeState">Following</span></button></span><time datetime="2017-07-02T17:51:49.407Z">Jul 2, 2017</time><span class="middotDivider u-fontSize12"></span><span class="readingTime" title="4 min read"></span>
+
 
 So I have been frequently traveling on trains lately and that means…loads of time to waste watching trees and cows and sheep … or to play some games perhaps on my [Nintendo DS](https://en.wikipedia.org/wiki/Nintendo_DS).
 
