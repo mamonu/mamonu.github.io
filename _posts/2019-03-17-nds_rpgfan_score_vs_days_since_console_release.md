@@ -1,12 +1,8 @@
 ---
 layout: single
-title: "Correllation between Nintendo DS RPG games and how far into the console’s lifecycle the games were released"
+title: "Is there a correllation between Nintendo DS RPG games and how far into the console’s lifecycle the games were released"
 date:   17-03-2019 08:38:07 +0000
 ---
-
-* * *
-
-# Is there a correlation between the review scores of Nintendo DS RPG games and how far into the console’s lifecycle the games were released?
 
 
 (an older post migrated from my Medium blog)
@@ -19,9 +15,13 @@ So while I was trying to best my New Super Mario Bros high-score I thought : �
 
 Perhaps I can test a hunch that I have (ok ok … a _hypothesis_) that there is a relationship between scores in reviews and how late to a console life-cycle an RPG game has been released. I wanted to test some pandas functionality too so I started coding a small script.
 
+
+
+
 <pre name="0482" id="0482" class="graf graf--pre graf-after--p">import pandas as pd</pre>
 
 One of my favorite sites for RPG games has been [RPGFan](http://www.rpgfan.com/reviews.html). I consider its reviews trustworthy and they cover all kinds of consoles and platforms.So I decided to scrape the [Nintendo DS section](http://www.rpgfan.com/reviews-ds.html) of the reviews. Decided to use the .read_html() method from pandas. By providing some help and with some experimentation I got the data I wanted by doing this:
+![](https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/NDS/src2img(0).png)
 
 <pre name="3409" id="3409" class="graf graf--pre graf-after--p">rpgtbl = pd.read_html("[http://www.rpgfan.com/reviews-ds.html](http://www.rpgfan.com/reviews-ds.html)",match="Game Title",header=0,encoding="latin1")[-1]
 rpgtbl.head()</pre>
@@ -34,6 +34,7 @@ Now this might look easy. Its because pandas .read_html() made it easy to be ab
 
 Anyway… I still needed to make the data more suitable for analysis. What I wanted was the time difference from the day the DS console was released (21-Nov-2004) to the date the game was reviewed. Its pandas time again:
 
+![](https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/NDS/src2img(1).png)
 <pre name="f660" id="f660" class="graf graf--pre graf-after--p">rpgtbl['datetime'] = pd.to_datetime(rpgtbl['Date'])
 rpgtbl['days_since_release'] = (rpgtbl['datetime']-pd.Timestamp('20041121')).dt.days.astype(float)</pre>
 
@@ -42,6 +43,7 @@ Firstly I convert the **Date** column I got from the site into the **datetime** 
 ![](https://cdn-images-1.medium.com/max/1600/1*GFaa4Klw62md827yHeawcw.png)
 
 OK. Now the dates are fine but I want to do something with the score since I had it as a string in percentage format. Also I want to clean up a bit, and drop all columns I don’t really need by defining the ones I want to keep and keep only those.Again pandas to the rescue:
+![](https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/NDS/src2img(2).png)
 
 <pre name="5c06" id="5c06" class="graf graf--pre graf-after--p">rpgtbl ['rpgfanscore'] = rpgtbl['Score'].astype(str).str[:-1].astype(float)</pre>
 
@@ -52,6 +54,9 @@ rpgtbl.head()</pre>
 ![](https://cdn-images-1.medium.com/max/1600/1*hu4ixAKVjd3THjyewYSyaA.png)
 
 So now I am ready for some plotting . I also want to check if these variables are correlated at all:
+
+![](https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/NDS/src2img(3).png)
+
 
 <pre name="e881" id="e881" class="graf graf--pre graf-after--p"> _#_ plot inline
 %matplotlib inline
