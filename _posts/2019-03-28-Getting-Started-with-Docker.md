@@ -29,10 +29,7 @@ This post is a quick "hello world" for Docker, showing basic steps needed to:
 ```
 2. Create a new dockerfile
 
-
 https://carbon.now.sh/embed/?bg=rgba(171%252C%2520184%252C%2520195%252C%25201)&t=seti&wt=none&l=application%252Fx-sh&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fm=Hack&fs=14px&lh=133%2525&si=false&code=%252523%252520Create%252520an%252520ubuntu%252520image%252520with%252520a%252520copy%252520of%252520the%252520file%252520%252522hello.txt%252522%25250AFROM%252520ubuntu%25250ALABEL%252520maintainer%252520jknight%25250A%252523%252520Note%252520the%252520tailing%252520slash%252520is%252520important%25252C%252520otherwise%252520it'll%252520copy%252520%252522hello.txt%252522%252520to%252520the%252520file%252520%252522data%252522!%25250ACOPY%252520hello.txt%252520%25252Fdata%25252F%252520%25250ACMD%252520%25255B%252522bash%252522%25255D&es=2x&wm=false
-
-
 
 
 ```bash
