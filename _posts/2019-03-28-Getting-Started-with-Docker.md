@@ -9,7 +9,7 @@ header:
 ---
 
 
-This post is a quick "hello world" for Docker, showing basic steps needed to:
+This post is showing the basic steps needed to:
 
 - Create a Docker image based on Ubuntu containing a sample "hello world" file. 
 - Create a volume
