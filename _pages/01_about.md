@@ -19,10 +19,11 @@ Statistics / Computer Science/ Machine Learning / DataVis
   - NLP 
   - Python (especially functional programming on python)
   - Graph Databases. Graph/Network Theory
-  - Clustering methods. And projection methods to bring info into 2d!
-  - Visualization (mainly web based interactive but also 3D based!!)
-  - Testing (from unit to integration to end-to-end). I love pytest and its plugins
-  - profiling and finding ways to run code faster (a remnant from my C++ days!)
+  - Clustering methods 
+  - ... And projection methods to bring info into 2d!
+  - Visualization (web based/interactive but also 3D based!!)
+  - Testing (from unit to integration to end-to-end).
+  - Profiling and finding ways to run code faster (a remnant from my C++ days!)
   - Lisp-family functional languages such as Clojure
   - Functional Languages in general 
 
@@ -35,7 +36,7 @@ some projects:
   techniques for text mining of unstructured documents and automatic document summarization and classification.
   
   [bumblebee python package](https://github.com/mamonu/bumblebee)
-  
+
   [Life costs and food survey project](https://github.com/ONSBigData/LCF-project)
   
   [Zoopla text classification project](https://github.com/ONSBigData/housing_clf)
