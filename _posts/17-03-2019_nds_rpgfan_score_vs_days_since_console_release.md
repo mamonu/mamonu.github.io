@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Correllation between Nintendo DS RPG games and how far into the console’s lifecycle the games were released"
-date:   20-03-2019 08:38:07 +0000
+date:   17-03-2019 08:38:07 +0000
 ---
 
 * * *
