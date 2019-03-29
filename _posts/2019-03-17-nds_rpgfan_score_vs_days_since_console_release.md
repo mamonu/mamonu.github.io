@@ -15,14 +15,21 @@ So while I was trying to best my New Super Mario Bros high-score I thought : �
 
 Perhaps I can test a hunch that I have (ok ok … a _hypothesis_) that there is a relationship between scores in reviews and how late to a console life-cycle an RPG game has been released. I wanted to test some pandas functionality too so I started coding a small script.
 
-One of my favorite sites for RPG games has been [RPGFan](http://www.rpgfan.com/reviews.html). I consider its reviews trustworthy and they cover all kinds of consoles and platforms.So I decided to scrape the [Nintendo DS section](http://www.rpgfan.com/reviews-ds.html) of the reviews. Decided to use the .read_html() method from pandas. By providing some help and with some experimentation I got the data I wanted by doing this:
-![](https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/NDS/src2img(0).png)
+One of my favorite sites for RPG games has been [RPGFan](http://www.rpgfan.com/reviews.html). I consider its reviews trustworthy and they cover all kinds of consoles and platforms.
+
+So I decided to scrape the [Nintendo DS section](http://www.rpgfan.com/reviews-ds.html) of the reviews. Decided to use the **.read_html() method** from pandas. 
+
+By providing some help and with some experimentation I got the data I wanted by doing this:
+
+<img src="https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/NDS/src2img(0).png" alt="code" style="width:200px;"/>
+
 
 By providing a hint (match=”Game Title”) , by specifying that the first row is the header and by taking the last table **[-1]** from the list of tables I got from **.read_html** I had all the data necessary. Here are the first 5 rows that .head() is giving me:
 
 ![](https://cdn-images-1.medium.com/max/1600/1*7HH56RKceFiDqNwLZYZc1A.png)
 
-Now this might look easy. Its because pandas .read_html() made it easy to be able to transform an HTML table to a dataframe. Believe me when I say that you want to have these kinds of helper functions when you can since parsing HTML tables is a boring thankless task.So thank you **pandas** developers!
+Now this might look easy. Its because pandas .read_html() made it easy to be able to transform an HTML table to a dataframe. 
+Believe me when I say that you want to have these kinds of helper functions when you can since parsing HTML tables is a boring thankless task.So thank you **pandas** developers!
 
 Anyway… I still needed to make the data more suitable for analysis. What I wanted was the time difference from the day the DS console was released (21-Nov-2004) to the date the game was reviewed. Its pandas time again:
 
