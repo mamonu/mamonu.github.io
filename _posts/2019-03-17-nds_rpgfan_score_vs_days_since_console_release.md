@@ -21,7 +21,7 @@ So I decided to scrape the [Nintendo DS section](http://www.rpgfan.com/reviews-d
 
 By providing some help and with some experimentation I got the data I wanted by doing this:
 
-<img src="https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/NDS/src2img(0).png" alt="code" style="width:200px;"/>
+<img src="https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/NDS/src2img(0).png" alt="code" style="height:200px;"/>
 
 
 By providing a hint (match=”Game Title”) , by specifying that the first row is the header and by taking the last table **[-1]** from the list of tables I got from **.read_html** I had all the data necessary. Here are the first 5 rows that .head() is giving me:
@@ -33,7 +33,7 @@ Believe me when I say that you want to have these kinds of helper functions when
 
 Anyway… I still needed to make the data more suitable for analysis. What I wanted was the time difference from the day the DS console was released (21-Nov-2004) to the date the game was reviewed. Its pandas time again:
 
-<img src="https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/NDS/src2img(1).png" alt="code" style="width:200px;"/>
+<img src="https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/NDS/src2img(1).png" alt="code" style="height:200px;"/>
 
 
 Firstly I convert the **Date** column I got from the site into the **datetime** type from Pandas. Then I create a variable called **days_since_release** which took a **timestamp** of the date of the release and found the difference between that and the review date available in **datetime**. Then I use the **dt.days** accessor in order to get the number of days out of that and then convert it into a float.
