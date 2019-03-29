@@ -9,7 +9,12 @@ header:
   overlay_image: assets/dataviz.gif
   overlay_filter: 0.5
   actions:
-    - label: "More Info"
+    - label: "About"
       url: "mamonu.github.io/about"
-  
 ---
+
+{% for post in site.posts %}
+{{ post.title }}
+{{content}} 
+Read More 
+{% endfor %}
