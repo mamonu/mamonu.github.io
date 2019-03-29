@@ -1,11 +1,13 @@
 ---
-title: Getting Started with Docker
+layout: single
+title: "Getting Started with Docker"
+date:   17-07-2017-07 08:38:07 +0000
 header:
   overlay_image: /assets/docker.png
   overlay_filter: 0.75
-  show_overlay_excerpt: false
   teaser: /assets/docker.png
 ---
+
 
 This post is a quick "hello world" for Docker, showing basic steps needed to:
 
