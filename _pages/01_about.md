@@ -32,21 +32,19 @@ permalink: /about/
 
     MSc IN APPLIED STATISTICS & OPERATIONAL RESEARCH
     
-    
 2004,UNIVERSITY OF HULL 
 
-  MSc COMPUTER GRAPHICS AND VIRTUAL ENVIRONMENTS
-  
+    MSc COMPUTER GRAPHICS AND VIRTUAL ENVIRONMENTS
   
 1999,MIDDLESEX UNIVERSITY   
 
-  BSc (HONS) APPLIED COMPUTING
+    BSc (HONS) APPLIED COMPUTING
 ```
 
 #### some projects:
 
 
-- Currently being involved projects using NLP (natural language processing) 
+- Currently being involved in projects using NLP (natural language processing) 
   techniques for text mining of unstructured documents and automatic document summarization and classification.
   
   [bumblebee python package](https://github.com/mamonu/bumblebee)
