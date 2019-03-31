@@ -26,7 +26,15 @@ permalink: /about/
 
 ```
 
-some projects:
+#### ACADEMIC QUALIFICATIONS
+```markdown
+2014,CARDIFF UNIVERSITY ,MSC IN APPLIED STATISTICS & OPERATIONAL RESEARCH
+2004,UNIVERSITY OF HULL, MSC COMPUTER GRAPHICS AND VIRTUAL ENVIRONMENTS
+1999,MIDDLESEX UNIVERSITY,   B.SC (HONS) APPLIED COMPUTING
+
+```
+
+#### some projects:
 
 
 - Currently being involved projects using NLP (natural language processing) 
