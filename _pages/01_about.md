@@ -14,7 +14,7 @@ permalink: /about/
   - Data Science on cluster platforms 
   - Spark/HDFS/Hadoop/YARN/PySpark/Hive/Impala in CDH
   - NLP 
-  - Python (especially functional programming on python)
+  - Python (especially functional programming on Python)
   - Graph Databases. Graph/Network Theory
   - Clustering methods 
   - ... And projection methods to bring info into 2d!
