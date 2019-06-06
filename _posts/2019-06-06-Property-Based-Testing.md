@@ -56,7 +56,7 @@ Ok lets try now using Property-Based-Testing with the hypothesis module
 
 After some changes needed the testing code becomes:
 
-![calc hyptest](https://github.com/mamonu/mamonu.github.io/blob/master/assets/hypt/pytesthyp.png)
+![calc hyptest](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/pytesthyp.png)
 
 
 
