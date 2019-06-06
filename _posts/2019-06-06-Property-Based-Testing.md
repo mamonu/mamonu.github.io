@@ -42,9 +42,14 @@ Our calculator app in all its glory
 
 So we create some test methods for the app:
 
-![calc app](https://github.com/mamonu/mamonu.github.io/blob/master/assets/hypt/pytestsimple1.png)
+![calc app_t](https://github.com/mamonu/mamonu.github.io/blob/master/assets/hypt/pytestsimple1.png)
 
-We run the tests created using pytest
+We run the tests created 
+
+
+```bash
+pytest -v
+```
 
 ![calc pytest](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/pytestresult.png)
 
@@ -60,7 +65,13 @@ After some changes needed the testing code becomes:
 
 
 
-We run again the tests created using pytest
+We run again the tests created using 
+
+```bash
+pytest -v
+```
+
+
 
 ![calchyptestresults](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/pytesthypresult1.png)
 
