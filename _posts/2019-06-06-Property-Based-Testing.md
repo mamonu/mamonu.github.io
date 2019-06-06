@@ -9,15 +9,15 @@ date:   06-06-2019 06:58:07 +0000
 ---
 
 
-A complementary test philosophy introduced by QuickCheck
 
 Property based testing has become quite famous in the functional world. 
 
 It was introduced by the QuickCheck framework in Haskell and it suggests another way to test . 
 
-Its not a magic bullet but rather a complementary addition to traditional example-based testing.It targets all the scope covered by example-based testing: from unit tests to integration tests.
+Its not a magic bullet but rather a complementary addition to traditional example-based testing that we usually do.
+It targets all the scope covered by example-based testing: from unit tests to integration tests.
 
-</b>
+</br>
 
 In example-based unit tests you
 - write down some example inputs
@@ -26,7 +26,6 @@ In example-based unit tests you
 
 
 
-</b>
 
 
 In Property-based Testing (PBT):
@@ -39,6 +38,12 @@ you need to specify post-conditions that must hold no matter what
 - shrink inputs to the minimal set of things needed to happen to fail automatically 
 
 
+
+
+In Python,  [Hypothesis](https://github.com/HypothesisWorks/hypothesis/tree/master/hypothesis-python) 
+is a great property-testing library which allows you to write tests along with pytest (its a pytest plugin_
+. 
+We are going to make use of this library.
 Lets try to test a simple calculator app in Python
 
 Our calculator app in all its glory
@@ -49,7 +54,7 @@ Our calculator app in all its glory
 ---
 
 
-So we create some test methods for the app:
+So lets create some test methods for the app:
 
 ![calc app_t](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/pytestsimple1.png)
 
@@ -72,18 +77,13 @@ After some changes needed the testing code becomes:
 
 ![calc hyptest](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/pytesthyp.png)
 
-
-
 We run again the tests created using 
 
 ```bash
 pytest -v
 ```
 
-
-
 ![calchyptestresults](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/pytesthypresult1.png)
-
 
 
 Looking a bit closely to pytest output we  see this:
