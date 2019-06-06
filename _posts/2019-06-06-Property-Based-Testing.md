@@ -40,9 +40,9 @@ Tests run using pytest
 
 without hypothesis:
 
-<img src="https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/hypt/before_hypothesis.svg">
+<img src="https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/hypt/before_hypothesis.svg?sanitize=true">
 
 
 using Property-Based-Testing with hypothesis module
 
-<img src="https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/hypt/after_hypothesis.svg">
+<img src="https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/hypt/after_hypothesis.svg?sanitize=true">
