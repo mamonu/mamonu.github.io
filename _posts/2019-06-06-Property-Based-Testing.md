@@ -9,19 +9,25 @@ date:   06-06-2019 06:58:07 +0000
 ---
 
 
-
-Another test philosophy introduced by QuickCheck
+A complementary test philosophy introduced by QuickCheck
 
 Property based testing has become quite famous in the functional world. 
+
 It was introduced by the QuickCheck framework in Haskell and it suggests another way to test . 
-Its not a magic bullet but rather a complementary addition to traditional example-based testing 
-It targets all the scope covered by example based testing: from unit tests to integration tests.
 
+Its not a magic bullet but rather a complementary addition to traditional example-based testing.It targets all the scope covered by example-based testing: from unit tests to integration tests.
 
-In example based unit tests you
+</b>
+
+In example-based unit tests you
 - write down some example inputs
 - write down the expected results
 - you run your code and check that they match!
+
+
+
+</b>
+
 
 In Property-based Testing (PBT):
 
@@ -40,6 +46,9 @@ Our calculator app in all its glory
 ![calc app](https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/hypt/calcs.png)
 
 
+---
+
+
 So we create some test methods for the app:
 
 ![calc app_t](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/pytestsimple1.png)
@@ -55,7 +64,7 @@ pytest -v
 
 Great! everything passes! we are great. We tested everything. We also we have 100% coverage! 
 
-
+---
 
 Ok lets try now using Property-Based-Testing with the hypothesis module
 
