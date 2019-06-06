@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Is there a correllation between Nintendo DS RPG games and how far into the console’s lifecycle the games were released?"
+title: "Is there a correllation between the score of Nintendo DS RPG games and how far into the console’s lifecycle the games were released?"
 header:
   overlay_image: https://cdn-images-1.medium.com/max/1600/1*2HOzC7_zg9HnZEM8k578UQ.png
   overlay_filter: 0.75
