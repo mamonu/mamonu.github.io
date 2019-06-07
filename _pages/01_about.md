@@ -41,25 +41,16 @@ permalink: /about/
     BSc (HONS) APPLIED COMPUTING
 ```
 
-#### some projects:
+#### some links:
 
 
-- Currently being involved in projects using NLP (natural language processing) 
-  techniques for text mining of unstructured documents and automatic document summarization and classification.
-  
-  [bumblebee python package](https://github.com/mamonu/bumblebee)
-
-  [Life costs and food survey project](https://github.com/ONSBigData/LCF-project)
-  
-  [Zoopla text classification project](https://github.com/ONSBigData/housing_clf)
-  
 
 - Currently involved in data science projects using PySpark 2+ on the Cloudera Data Science Workbench 
   environment on CDH (Cloudera's software distribution containing Apache Hadoop , Hive, YARN , Spark) 
   and related opensource projects.
   [not availiable in a public repository]
   
-- Have been working on a project involving NOSQL Graph databases (Neo4j) and researching the ways
+- On 20015 I had been working on a project involving NOSQL Graph databases (Neo4j) and researching the ways
   they can improve on existing data matching practices at the ONS.
   
   [A graph linkage interactive viz in Shiny](https://mamonu.shinyapps.io/GraphRecordLinkage/)
@@ -68,3 +59,8 @@ permalink: /about/
 
   [Profiling and Optimizing python](https://github.com/mamonu/ProfilingOptimizingPy). 
    
+
+- check my [github]((https://github.com/mamonu/)
+
+
+
