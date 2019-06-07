@@ -138,8 +138,9 @@ And you dont need to ruin your test patterns or delete your already made tests. 
 <br /> 
 
 Well you are in luck. Because there is a community people that have created a lot of *strategies* of dealing with a number of things
-like dataframes,GeoJSON etc.
-Have a look [here](https://hypothesis.readthedocs.io/en/latest/strategies.html?highlight=strategies) for some examples. 
+like dataframes,GeoJSON and a lot of other constructs that you might find useful.
+
+Have a look [here](https://hypothesis.readthedocs.io/en/latest/numpy.html#pandas) and [here](https://hypothesis.readthedocs.io/en/latest/strategies.html?highlight=strategies) for some examples. 
 
 ---
 ### So is PBT only a Python/Haskell thing?
