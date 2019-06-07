@@ -15,7 +15,7 @@ Quis custodiet ipsos custodes? pt1
 "Quis custodiet ipsos custodes?" is a Latin phrase found in the work of the Roman poet Juvenal from his Satires (Satire VI, lines 347–348). It translates to "but who will guard the guardians??" ...
 
 
-This is also the header for two posts related to testing that I want to discuss
+This is also the header for two posts related to testing for some comments that I want to discuss.
 The first one that you are reading now is about property based testing which is an interesting way of testing your code.
 
 It was introduced by the [QuickCheck](https://github.com/nick8325/quickcheck) framework in Haskell and it suggests another way to test your code. 
@@ -30,9 +30,9 @@ In example-based unit tests you:
 
 
 <br /> 
-Usualy we use some edge cases that we think they will break the system/function under test.
-But we have work to do and sometimes these cases are far from exhaustive. But how sure are we of that?
-"Who is watching the Guardians?"
+Usualy we use some usual cases of the inputs we expect. If we are feeling creative we introduce also some edge cases that we think they will break the system/function under test.
+But we have work to do and sometimes these cases are far from exhaustive. How sure that we have done all we can?? 
+Or "Who is guarding the Guardians"?
 
 Enter PBT to the rescue. In Property-based Testing (PBT) on the other hand:
 
@@ -73,7 +73,6 @@ Ok enough talking ,lets try to test a simple calculator app in Python.Here is ou
 
 ---
 
-<br /> 
 #### simple tests
 
 
@@ -125,14 +124,8 @@ Looking a bit closely to pytest output we  see this:
 
 ![calchyptestresult2](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/pytesthypresult2.png)
 
+What on earth is this trickery? 
 <br /> 
-<br /> 
-
-What is this trickery? 
-
-<br /> 
-<br /> 
-
 Well it just says: 
 
 - any float number could be there including nan and in such case.. BOOM :boom:
@@ -146,8 +139,16 @@ in a way that you have new test cases to write and guard around.
 And you dont need to ruin your test patterns or delete your already made tests. You can run Hypothesis-based tests side by side other tests with pytest :thumbsup: . 
 
 ---
-
+####  But im a data scientist! I deal with dataframes everyday. Little toy examples will not do!!
 <br /> 
+
+Well you are in luck. Because there is a community people that have created a lot of *strategies* of dealing with a number of things
+like dataframes,GeoJSON etc.
+Have a look [here](https://hypothesis.readthedocs.io/en/latest/strategies.html?highlight=strategies) for some examples. 
+
+---
+#### So is PBT only a Python/Haskell thing?
+
 <br /> 
 
 Property Based Testing has been implemented in many languages. 
@@ -155,6 +156,7 @@ Below are some example implementations other than the one used above in Python. 
 
 
 The most datasciencey are:
+<br />
 
 R:
 * [hedgehog](https://github.com/hedgehogqa/r-hedgehog)
@@ -165,8 +167,9 @@ Scala:
 JavaScript:
  * [QC.js](https://bitbucket.org/darrint/qc.js/)
 
-
+<br />
 And the rest
+<br />
 
 Clojure:
  * [ClojureCheck](https://bitbucket.org/kotarak/clojurecheck) -- requires clojure.test
