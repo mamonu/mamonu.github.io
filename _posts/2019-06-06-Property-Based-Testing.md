@@ -8,7 +8,7 @@ header:
 date:   06-06-2019 06:58:07 +0000
 ---
 
-Quis custodiet ipsos custodes? pt1
+### Quis custodiet ipsos custodes? pt1
 
  
  
@@ -59,7 +59,7 @@ It will then try to shrink the set of values that cause errors in order to deter
 
 <br /> 
 
-#### simple app
+### Simple app
 
 <br /> 
 
@@ -73,18 +73,15 @@ Ok enough talking ,lets try to test a simple calculator app in Python.Here is ou
 
 ---
 
-#### simple tests
+### Simple tests
 
 
 <br /> 
-
-
 So lets create some test methods for the app using pytest:
 
 ![calc app_t](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/pytestsimple1.png)
 
 We run the tests created 
-
 
 ```bash
 pytest -v
@@ -99,7 +96,7 @@ Great! everything passes! we are great. We tested everything. We also we have 10
 
 ---
 
-####  But is this the best we can do?
+###  But is this the best we can do?
 
 <br /> 
 
@@ -139,7 +136,7 @@ in a way that you have new test cases to write and guard around.
 And you dont need to ruin your test patterns or delete your already made tests. You can run Hypothesis-based tests side by side other tests with pytest :thumbsup: . 
 
 ---
-####  But im a data scientist! I deal with dataframes everyday. Little toy examples will not do!!
+###  But im a data scientist! I deal with dataframes everyday. Little toy examples will not do!!
 <br /> 
 
 Well you are in luck. Because there is a community people that have created a lot of *strategies* of dealing with a number of things
@@ -148,7 +145,6 @@ Have a look [here](https://hypothesis.readthedocs.io/en/latest/strategies.html?h
 
 ---
 #### So is PBT only a Python/Haskell thing?
-
 <br /> 
 
 Property Based Testing has been implemented in many languages. 
@@ -169,6 +165,7 @@ JavaScript:
 
 <br />
 And the rest
+
 <br />
 
 Clojure:
