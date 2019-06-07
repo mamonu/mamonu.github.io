@@ -136,26 +136,24 @@ So please kind person writing the code, go back to your function and add somethi
 <br /> 
 <br /> 
 
-Property Based Testing has been implemented in many languages. Below are some example implementations. When I find more I will 
-add them here.
+Property Based Testing has been implemented in many languages. 
+Below are some example implementations other than the one used above in Python. When I find more I will add them here.
 
-.NET (C#, F#, VB)
- * [FsCheck](https://github.com/fscheck/FsCheck)
-
-Python:
- * [Hypothesis](https://github.com/HypothesisWorks/hypothesis/tree/master/hypothesis-python) -- requires a test framework, provides decorators for easy integration
-
-Ruby:
- * [Rantly](https://github.com/hayeah/rantly)
-
-Scala:
- * [ScalaCheck](https://github.com/rickynils/scalacheck) 
 
 Clojure:
  * [ClojureCheck](https://bitbucket.org/kotarak/clojurecheck) -- requires clojure.test
 
 Java:
  * [JavaQuickCheck](http://java.net/projects/quickcheck/pages/Home) -- requires JUnit or some other testing framework
+
+.NET (C#, F#, VB)
+ * [FsCheck](https://github.com/fscheck/FsCheck)
+
+Ruby:
+ * [Rantly](https://github.com/hayeah/rantly)
+
+Scala:
+ * [ScalaCheck](https://github.com/rickynils/scalacheck) 
 
 Groovy:
  * [Gruesome](https://github.com/mcandre/gruesome) -- a quick and dirty implementation for Groovy
