@@ -5,11 +5,11 @@ permalink: /about/
 ---
 
 ## Theodore Manassis 
-#### Data Scientist at the Office for National Statistics [Big Data](https://onsbigdata.github.io/) team  
+### Data Scientist at the Office for National Statistics [Big Data](https://onsbigdata.github.io/) team  
 
 ###### Previously I worked in the private sector as a programmer.
 
-- Interests
+#### Interests
 
 ```markdown
 
