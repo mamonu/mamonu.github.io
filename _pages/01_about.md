@@ -65,7 +65,7 @@ permalink: /about/
   [Profiling and Optimizing python](https://github.com/mamonu/ProfilingOptimizingPy). 
    
 
-- check my [github](https://github.com/mamonu/)
+- For more ,check my github repo (click on the octocat on the left!)
 
 
 
