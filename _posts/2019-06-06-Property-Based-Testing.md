@@ -57,7 +57,9 @@ It will then try to shrink the set of values that cause errors in order to deter
 <br /> 
 
 ---
-##### simple app
+
+<br /> 
+#### simple app
 
 <br /> 
 
@@ -70,7 +72,9 @@ Ok enough talking ,lets try to test a simple calculator app in Python.Here is ou
 <br /> 
 
 ---
-##### simple tests
+
+<br /> 
+#### simple tests
 
 
 <br /> 
@@ -95,7 +99,9 @@ Great! everything passes! we are great. We tested everything. We also we have 10
 
 
 ---
-##### But is this the best we can do?
+
+<br /> 
+#### But is this the best we can do?
 
 <br /> 
 
