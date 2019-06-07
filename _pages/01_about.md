@@ -10,6 +10,7 @@ permalink: /about/
 ###### Previously I worked in the private sector as a programmer.
 
 - Interests
+
 ```markdown
 
   - Statistics
