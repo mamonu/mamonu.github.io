@@ -22,8 +22,6 @@ It was introduced by the [QuickCheck](https://github.com/nick8325/quickcheck) fr
 Its not a magic bullet but rather a complementary addition to traditional example-based testing that we usually do.
 It covers the scope covered by example-based testing: from unit tests to integration tests.
 
-<br /> 
-
 In example-based unit tests you:
 
 - define some example inputs
@@ -32,14 +30,9 @@ In example-based unit tests you:
 
 
 <br /> 
-<br /> 
-
 Usualy we use some edge cases that we think they will break the system/function under test.
-But we have work to do and sometimes these cases are far from exhaustive.
-
-
-<br /> 
-
+But we have work to do and sometimes these cases are far from exhaustive. But how sure are we of that?
+"Who is watching the Guardians?"
 
 Enter PBT to the rescue. In Property-based Testing (PBT) on the other hand:
 
@@ -107,8 +100,6 @@ Great! everything passes! we are great. We tested everything. We also we have 10
 
 ---
 
-<br /> 
-
 ####  But is this the best we can do?
 
 <br /> 
@@ -143,8 +134,16 @@ What is this trickery?
 <br /> 
 
 Well it just says: 
-any float number could be there including nan and in such case.. BOOM 
-So please kind person writing the code, go back to your function and add something to deal with nan's (not a number) cases
+
+- any float number could be there including nan and in such case.. BOOM :boom:
+
+- so please kind person writing the code, go back to your function and add something to deal with nan's (not a number) cases
+
+
+So all in all its not rocket science. Its just a way of automaticaly trying to find a way to break your functions 
+in a way that you have new test cases to write and guard around.
+
+And you dont need to ruin your test patterns or delete your already made tests. You can run Hypothesis-based tests side by side other tests with pytest :thumbsup: . 
 
 ---
 
@@ -154,6 +153,20 @@ So please kind person writing the code, go back to your function and add somethi
 Property Based Testing has been implemented in many languages. 
 Below are some example implementations other than the one used above in Python. When I find more I will add them here.
 
+
+The most datasciencey are:
+
+R:
+* [hedgehog](https://github.com/hedgehogqa/r-hedgehog)
+
+Scala:
+ * [ScalaCheck](https://github.com/rickynils/scalacheck) 
+
+JavaScript:
+ * [QC.js](https://bitbucket.org/darrint/qc.js/)
+
+
+And the rest
 
 Clojure:
  * [ClojureCheck](https://bitbucket.org/kotarak/clojurecheck) -- requires clojure.test
@@ -167,14 +180,10 @@ Java:
 Ruby:
  * [Rantly](https://github.com/hayeah/rantly)
 
-Scala:
- * [ScalaCheck](https://github.com/rickynils/scalacheck) 
 
 Groovy:
  * [Gruesome](https://github.com/mcandre/gruesome) -- a quick and dirty implementation for Groovy
 
-JavaScript:
- * [QC.js](https://bitbucket.org/darrint/qc.js/)
 
 
 
