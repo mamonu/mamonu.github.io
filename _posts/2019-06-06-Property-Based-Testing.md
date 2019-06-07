@@ -8,10 +8,12 @@ header:
 date:   06-06-2019 06:58:07 +0000
 ---
 
+
 ### Quis custodiet ipsos custodes? pt1
 
  
  
+<br /> 
 "Quis custodiet ipsos custodes?" is a Latin phrase found in the work of the Roman poet Juvenal from his Satires (Satire VI, lines 347–348). It translates to "but who will guard the guardians??" ...
 
 
@@ -57,13 +59,10 @@ It will then try to shrink the set of values that cause errors in order to deter
 
 ---
 
-<br /> 
-
 ### Simple app
 
-<br /> 
 
-Ok enough talking ,lets try to test a simple calculator app in Python.Here is our calculator app in all its glory:
+But enough talking ,lets try to test a simple calculator app in Python.Here is our calculator app in all its glory:
 
 <br /> 
 
@@ -72,7 +71,6 @@ Ok enough talking ,lets try to test a simple calculator app in Python.Here is ou
 <br /> 
 
 ---
-
 ### Simple tests
 
 
@@ -144,7 +142,7 @@ like dataframes,GeoJSON etc.
 Have a look [here](https://hypothesis.readthedocs.io/en/latest/strategies.html?highlight=strategies) for some examples. 
 
 ---
-#### So is PBT only a Python/Haskell thing?
+### So is PBT only a Python/Haskell thing?
 <br /> 
 
 Property Based Testing has been implemented in many languages. 
