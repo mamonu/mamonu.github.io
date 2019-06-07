@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Unit Testing using Property Based Tests"
+title: "Testing using Property Based Tests"
 header:
   overlay_image: https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/cropped-bd1.jpg
   overlay_filter: 0.75
@@ -8,11 +8,17 @@ header:
 date:   06-06-2019 06:58:07 +0000
 ---
 
+Quis custodiet ipsos custodes? pt1
+
+ 
+ 
+"Quis custodiet ipsos custodes?" is a Latin phrase found in the work of the Roman poet Juvenal from his Satires (Satire VI, lines 347–348). It translates to "but who will guard the guardians??" ...
 
 
-Property based testing is an interesting way of testing your code.
+This is also the header for two posts related to testing that I want to discuss
+The first one that you are reading now is about property based testing which is an interesting way of testing your code.
 
-It was introduced by the QuickCheck framework in Haskell and it suggests another way to test your code. 
+It was introduced by the [QuickCheck](https://github.com/nick8325/quickcheck) framework in Haskell and it suggests another way to test your code. 
 Its not a magic bullet but rather a complementary addition to traditional example-based testing that we usually do.
 It covers the scope covered by example-based testing: from unit tests to integration tests.
 
