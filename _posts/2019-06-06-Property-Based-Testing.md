@@ -10,41 +10,46 @@ date:   06-06-2019 06:58:07 +0000
 
 
 
-Property based testing has become quite famous in the functional world. 
-
+Property based testing has become quite famous in the functional world. And this goodness is spilling out and infecting other languages.
 It was introduced by the QuickCheck framework in Haskell and it suggests another way to test . 
 
 Its not a magic bullet but rather a complementary addition to traditional example-based testing that we usually do.
-It targets all the scope covered by example-based testing: from unit tests to integration tests.
+It covers the scope covered by example-based testing: from unit tests to integration tests.
 
-</br>
 
-In example-based unit tests you
-- write down some example inputs
-- write down the expected results
+
+In example-based unit tests you:
+
+- define some example inputs
+- define the expected results
 - you run your code and check that they match!
 
 
+Usualy we use some edge cases that we think they will break the system/function under test.But we have work to do
+and sometimes these cases are far from exhaustive.
 
 
+Enter P-B-T to the rescue. In Property-based Testing (PBT) on the other hand:
 
-In Property-based Testing (PBT):
-
-you need to specify post-conditions that must hold no matter what 
-
-- you describe the input
+- you describe the properties of the input
 - you describe the properties of the output
 - Have the computer try lots of random examples – check they don’t fail
-- shrink inputs to the minimal set of things needed to happen to fail automatically 
-
-
+- If they do: shrink inputs ,to the minimal set of things needed to happen to fail, automatically 
 
 
 In Python,  [Hypothesis](https://github.com/HypothesisWorks/hypothesis/tree/master/hypothesis-python) 
-is a great property-testing library which allows you to write tests along with pytest (its a pytest plugin_
-. 
-We are going to make use of this library.
-Lets try to test a simple calculator app in Python
+is a great property-testing library which allows you to write tests along with pytest (its a pytest plugin). 
+
+We are going to make use of this library bweow with a small example.
+
+We are going to create some simple tests  that specify properties from very simple functional requirements (inputs are floats)
+Then Hypothesis will generate tests to try to falsify the properties. 
+It will then try to shrink the set of values that cause errors in order to determine the minimal failure case/cases
+
+---
+##### simple app
+
+Ok enough talking ,lets try to test a simple calculator app in Python
 
 Our calculator app in all its glory
 
@@ -52,7 +57,7 @@ Our calculator app in all its glory
 
 
 ---
-
+##### simple tests
 
 So lets create some test methods for the app:
 
@@ -65,11 +70,16 @@ We run the tests created
 pytest -v
 ```
 
+This results in:
+
 ![calc pytest](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/pytestresult.png)
 
 Great! everything passes! we are great. We tested everything. We also we have 100% coverage! 
 
+
+
 ---
+##### But is this the best we can do?
 
 Ok lets try now using Property-Based-Testing with the hypothesis module
 
@@ -91,7 +101,11 @@ Looking a bit closely to pytest output we  see this:
 ![calchyptestresult2](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/pytesthypresult2.png)
 
 
-What is this trickery? (well it just says that any number could be there including nan and in such case.. BOOM )
+What is this trickery? 
+
+Well it just says: 
+any float number could be there including nan and in such case.. BOOM 
+So please kind person writing the code, go back to your function and add something to deal with nan's (not a number) cases
 
 
 
