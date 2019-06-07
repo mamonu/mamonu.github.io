@@ -131,6 +131,40 @@ Well it just says:
 any float number could be there including nan and in such case.. BOOM 
 So please kind person writing the code, go back to your function and add something to deal with nan's (not a number) cases
 
+---
+
+<br /> 
+<br /> 
+
+Property Based Testing has been implemented in many languages. Below are some example implementations. When I find more I will 
+add them here.
+
+.NET (C#, F#, VB)
+ * [FsCheck](https://github.com/fscheck/FsCheck)
+
+Python:
+ * [Hypothesis](https://github.com/HypothesisWorks/hypothesis/tree/master/hypothesis-python) -- requires a test framework, provides decorators for easy integration
+
+Ruby:
+ * [Rantly](https://github.com/hayeah/rantly)
+
+Scala:
+ * [ScalaCheck](https://github.com/rickynils/scalacheck) 
+
+Clojure:
+ * [ClojureCheck](https://bitbucket.org/kotarak/clojurecheck) -- requires clojure.test
+
+Java:
+ * [JavaQuickCheck](http://java.net/projects/quickcheck/pages/Home) -- requires JUnit or some other testing framework
+
+Groovy:
+ * [Gruesome](https://github.com/mcandre/gruesome) -- a quick and dirty implementation for Groovy
+
+JavaScript:
+ * [QC.js](https://bitbucket.org/darrint/qc.js/)
+
+
+
 
 
 
