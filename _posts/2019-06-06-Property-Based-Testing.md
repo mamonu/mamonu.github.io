@@ -12,16 +12,11 @@ date:   06-06-2019 06:58:07 +0000
 
 Property based testing is an interesting way of testing your code.
 
-` `  
-` `  
-It was introduced by the QuickCheck framework in Haskell and it suggests another way to test . 
-
+It was introduced by the QuickCheck framework in Haskell and it suggests another way to test your code. 
 Its not a magic bullet but rather a complementary addition to traditional example-based testing that we usually do.
 It covers the scope covered by example-based testing: from unit tests to integration tests.
 
-
-` `  
-` `  
+<br /> 
 
 In example-based unit tests you:
 
@@ -30,19 +25,24 @@ In example-based unit tests you:
 - you run your code and check that they match!
 
 
-` `  
-` `  
+<br /> 
+<br /> 
+
 Usualy we use some edge cases that we think they will break the system/function under test.
 But we have work to do and sometimes these cases are far from exhaustive.
 
-` `  
-` `  
+
+<br /> 
+
+
 Enter PBT to the rescue. In Property-based Testing (PBT) on the other hand:
 
 - you describe the properties of the input
 - you describe the properties of the output
 - Have the computer try lots of random examples – check they don’t fail
 - If they do: shrink inputs ,to the minimal set of things needed to happen to fail, automatically 
+
+<br /> 
 
 
 In Python,  [Hypothesis](https://github.com/HypothesisWorks/hypothesis/tree/master/hypothesis-python) 
@@ -54,27 +54,27 @@ We are going to create some simple tests  that specify properties from very simp
 Then Hypothesis will generate tests to try to falsify the properties. 
 It will then try to shrink the set of values that cause errors in order to determine the minimal failure case/cases
 
-` `  
-` `  
+<br /> 
 
 ---
 ##### simple app
 
-` `  
-` `  
+<br /> 
 
-Ok enough talking ,lets try to test a simple calculator app in Python
+Ok enough talking ,lets try to test a simple calculator app in Python.Here is our calculator app in all its glory:
 
-Our calculator app in all its glory
+<br /> 
 
 ![calc app](https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/hypt/calcs.png)
 
+<br /> 
 
 ---
 ##### simple tests
 
-` `  
-` `  
+
+<br /> 
+
 
 So lets create some test methods for the app using pytest:
 
@@ -97,13 +97,13 @@ Great! everything passes! we are great. We tested everything. We also we have 10
 ---
 ##### But is this the best we can do?
 
-
-` `  
-` `  
+<br /> 
 
 Ok lets try now using Property-Based-Testing with the hypothesis module
 
 After some changes needed the testing code becomes:
+
+<br /> 
 
 ![calc hyptest](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/pytesthyp.png)
 
@@ -120,12 +120,12 @@ Looking a bit closely to pytest output we  see this:
 
 ![calchyptestresult2](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/pytesthypresult2.png)
 
-
+<br /> 
+<br /> 
 What is this trickery? 
 
-
-` `  
-` `  
+<br /> 
+<br /> 
 
 Well it just says: 
 any float number could be there including nan and in such case.. BOOM 
