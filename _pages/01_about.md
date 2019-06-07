@@ -55,12 +55,12 @@ permalink: /about/
   and related opensource projects.
   [not availiable in a public repository]
   
-- On 20015 I had been working on a project involving NOSQL Graph databases (Neo4j) and researching the ways
+- On 2015 I had been working on a project involving NOSQL Graph databases (Neo4j) and researching the ways
   they can improve on existing data matching practices at the ONS.
   
   [A graph linkage interactive viz in Shiny](https://mamonu.shinyapps.io/GraphRecordLinkage/)
 
-- A lunch-talk I was supposed to give at GDSP Conference 2018 but that day I was snowed in... (doh!)
+- A lunch-talk I was supposed to give at GDSP Conference 2018 ... but that day I was snowed in... (doh!)
 
   [Profiling and Optimizing python](https://github.com/mamonu/ProfilingOptimizingPy). 
    
