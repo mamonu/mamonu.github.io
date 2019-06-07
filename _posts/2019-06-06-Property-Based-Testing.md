@@ -59,6 +59,7 @@ It will then try to shrink the set of values that cause errors in order to deter
 ---
 
 <br /> 
+
 #### simple app
 
 <br /> 
@@ -101,7 +102,8 @@ Great! everything passes! we are great. We tested everything. We also we have 10
 ---
 
 <br /> 
-#### But is this the best we can do?
+
+####  But is this the best we can do?
 
 <br /> 
 
@@ -128,6 +130,7 @@ Looking a bit closely to pytest output we  see this:
 
 <br /> 
 <br /> 
+
 What is this trickery? 
 
 <br /> 
