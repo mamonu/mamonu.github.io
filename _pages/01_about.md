@@ -6,12 +6,13 @@ permalink: /about/
 
 ## Theodore Manassis 
 
+<br /> 
 
-#### Data Scientist at the Office for National Statistics [Big Data](https://onsbigdata.github.io/) team interested in the intersection of  Statistics , Computer Science , Machine Learning and Data Visualization
+#### Data Scientist at the Office for National Statistics [Big Data](https://onsbigdata.github.io/) team interested in the intersection of  Statistics , Computer Science , Machine Learning and Data Visualization. And cats.
 
 ###### Previously I worked in the private sector as a programmer.
 
-< br/>
+<br /> 
 
 #### Interests
 
