@@ -17,11 +17,11 @@ date:   06-06-2019 06:58:07 +0000
 "Quis custodiet ipsos custodes?" is a Latin phrase found in the work of the Roman poet Juvenal from his Satires (Satire VI, lines 347–348). It translates to "but who will guard the guardians??" ...
 
 
-This is also the header for two posts related to testing for some comments that I want to discuss.
-The first one that you are reading now is about property based testing which is an interesting way of testing your code.
+Its also the header for two posts related to testing and some ways of trying to improve your already made testing harness of test scripts. (In case you dont have already a set of test scripts please have a look at the [previous](https://mamonu.github.io/Testing/) post I wrote about testing  !)
 
-It was introduced by the [QuickCheck](https://github.com/nick8325/quickcheck) framework in Haskell and it suggests another way to test your code. 
-Its not a magic bullet but rather a complementary addition to traditional example-based testing that we usually do.
+
+This post is about property based testing which is an interesting way of testing your code.It was introduced by the [QuickCheck](https://github.com/nick8325/quickcheck) framework in Haskell and it suggests another way to test your code. 
+Its not a magic bullet but rather a complementary addition to traditional testing that we usually do.
 It covers the scope covered by example-based testing: from unit tests to integration tests.
 
 In example-based unit tests you:
@@ -33,8 +33,7 @@ In example-based unit tests you:
 
 <br /> 
 Usualy we use some usual cases of the inputs we expect. If we are feeling creative we introduce also some edge cases that we think they will break the system/function under test.
-But we have work to do and sometimes these cases are far from exhaustive. How sure that we have done all we can?? 
-Or "Who is guarding the Guardians"?
+But we have work to do and sometimes these cases are far from exhaustive. How can we be sure that we have done all that we can?? Or "Who is guarding the Guardians"?
 
 Enter PBT to the rescue. In Property-based Testing (PBT) on the other hand:
 
@@ -49,9 +48,8 @@ Enter PBT to the rescue. In Property-based Testing (PBT) on the other hand:
 In Python,  [Hypothesis](https://github.com/HypothesisWorks/hypothesis/tree/master/hypothesis-python) 
 is a great property-testing library which allows you to write tests along with pytest (its a pytest plugin). 
 
-We are going to make use of this library bweow with a small example.
-
-We are going to create some simple tests  that specify properties from very simple functional requirements (inputs are floats)
+We are going to make use of this library with a small example.
+We are going to specify properties from very simple functional requirements (inputs are floats)
 Then Hypothesis will generate tests to try to falsify the properties. 
 It will then try to shrink the set of values that cause errors in order to determine the minimal failure case/cases
 
@@ -115,7 +113,7 @@ pytest -v
 ![calchyptestresults](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/pytesthypresult1.png)
 
 
-Looking a bit closely to pytest output we  see this:
+Looking a bit closely to pytest output we see this:
 
 ![calchyptestresult2](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/pytesthypresult2.png)
 
@@ -163,6 +161,7 @@ JavaScript:
  * [QC.js](https://bitbucket.org/darrint/qc.js/)
 
 <br />
+
 And the rest
 
 <br />
