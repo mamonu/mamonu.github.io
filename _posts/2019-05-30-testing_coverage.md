@@ -11,6 +11,7 @@ date:   30-05-2019 06:58:07 +0000
 # Using pytest 
 ## ... and creating a testing coverage report from it  🐞
 
+<br /> 
 
 ---
 
@@ -67,6 +68,9 @@ I get from this the following and from what I see my function 'howmanyletters' h
 ```
 
 ---
+<br /> 
+
+---
 
 ## test discoverability
 <br /> 
@@ -79,6 +83,11 @@ Pytest will only execute whatever function has test* or *test in it so that when
 print(dir(covtest))
 ``` 
 statement will be ignored.
+
+<br /> 
+
+---
+<br /> 
 
 ---
 
@@ -101,6 +110,9 @@ Yay. pytest found my test_covtest.py file and also my test_no_letters function. 
 And I got a [PASSED] in glorious green color. Life is good :)
 
 
+
+---
+<br /> 
 
 ---
 
