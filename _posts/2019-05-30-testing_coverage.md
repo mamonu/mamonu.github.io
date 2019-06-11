@@ -13,10 +13,10 @@ date:   28-05-2019 06:58:07 +0000
 
 ---
 
-#### testing with pytest 
+### testing with pytest 
 <br /> 
 
-Today I will try to show a practical demo of using pytest
+Today I will try to show a practical demo of using pytest.
 
 Furthermore I will show we can be also produce coverage information in the form of an html report from the the pytest testing suite.
 
@@ -55,7 +55,9 @@ that I picked the function that I want to test.
 
 I do this by:
 
-```print(dir(covtest))```
+```
+print(dir(covtest))
+```
 
 I get from this the following and from what I see my function 'howmanyletters' has been picked up by the import.Great!!!!
 
@@ -70,7 +72,11 @@ I get from this the following and from what I see my function 'howmanyletters' h
 There is a reason why i called my test file and my test functions in this way. By calling a file test_* or *_test i ensure this file gets autocollected by pytest when I eventually run it. Furthermore by call 
 calling my testing functions test_something or test_something_else inside my test_something.py file those tests get picked up. 
 Pytest will only execute whatever function has test* or *test in it so that when running the tests the
-```print(dir(covtest))``` statement will be ignored.
+
+```
+print(dir(covtest))
+``` 
+statement will be ignored.
 
 
 #### run the test/tests 
@@ -80,7 +86,9 @@ Pytest will only execute whatever function has test* or *test in it so that when
 ok its time to run my tests. I save and exit from my programming environment and go to the terminal.
 There I put the following on the bash prompt
 
-```pytest -v``` 
+```
+pytest -v
+``` 
 
 (-v is for verbose by the way)
 
@@ -93,7 +101,7 @@ And I got a [PASSED] in glorious green color. Life is good :)
 
 ---
 
-#### testing coverage
+### testing coverage
 
 
 <br /> 
