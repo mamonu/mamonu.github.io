@@ -8,12 +8,13 @@ header:
 date:   28-05-2019 06:58:07 +0000
 ---
 
-## Using pytest and creating a testing coverage report from it  🐞
+# Using pytest 
+## ... and creating a testing coverage report from it  🐞
 
 
 ---
 
-### testing with pytest 
+## testing with pytest 
 <br /> 
 
 Today I will try to show a practical demo of using pytest.
@@ -66,7 +67,7 @@ I get from this the following and from what I see my function 'howmanyletters' h
 ```
 
 
-#### test discoverability
+## test discoverability
 <br /> 
 
 There is a reason why i called my test file and my test functions in this way. By calling a file test_* or *_test i ensure this file gets autocollected by pytest when I eventually run it. Furthermore by call 
@@ -79,7 +80,7 @@ print(dir(covtest))
 statement will be ignored.
 
 
-#### run the test/tests 
+## run the test/tests 
 
 <br /> 
 
@@ -101,7 +102,7 @@ And I got a [PASSED] in glorious green color. Life is good :)
 
 ---
 
-### testing coverage
+## testing coverage
 
 
 <br /> 
