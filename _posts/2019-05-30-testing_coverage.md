@@ -5,7 +5,7 @@ header:
   overlay_image: https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/QA_Glitch.gif
   overlay_filter: 0.75
   teaser: https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/QA_Glitch.gif
-date:   28-05-2019 06:58:07 +0000
+date:   30-05-2019 06:58:07 +0000
 ---
 
 # Using pytest 
@@ -66,6 +66,7 @@ I get from this the following and from what I see my function 'howmanyletters' h
 ['__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'howmanyletters', 'pytest']
 ```
 
+---
 
 ## test discoverability
 <br /> 
@@ -79,6 +80,7 @@ print(dir(covtest))
 ``` 
 statement will be ignored.
 
+---
 
 ## run the test/tests 
 
