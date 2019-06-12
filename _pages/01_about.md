@@ -10,7 +10,9 @@ permalink: /about/
 
 #### Data Scientist at the Office for National Statistics [Big Data](https://onsbigdata.github.io/) team interested in the intersection of  Statistics , Computer Science , Machine Learning and Data Visualization. And cats.
 
-###### Previously I worked in the private sector as a programmer.
+###### Previously I worked in the private sector as a programmer working with Perl,Java and C++.
+
+###### Not a [ninja,rockstar,influencer] or any other LinkedIn bo%^*cks
 
 <br /> 
 
