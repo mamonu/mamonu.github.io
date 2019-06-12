@@ -11,7 +11,7 @@ date:   30-05-2019 06:58:07 +0000
 # Using pytest 
 ## ... and creating a testing coverage report from it  🐞
 
-</p>
+<p></p>
 
 ---
 ## testing with pytest 
@@ -38,11 +38,11 @@ Finaly if the length its more than 3 then it does something else with the input.
 
 The main code called rather unimaginatively covdemo.py :  
 
-</p>
+<p></p>
 
 ![calc app](https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/hypt/covdemo.png)
 
-</p>
+<p></p>
 
 
 I also create a test file in the same directory called test_covdemo.py . Here is the test code in all its grace and beauty 
@@ -66,12 +66,12 @@ I get from this the following and from what I see my function 'howmanyletters' h
 ['__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'howmanyletters', 'pytest']
 ```
 
-</p>
+<p></p>
 
 ---
 
-## test discoverability
-<br /> 
+## Test discoverability
+<p></p>
 
 There is a reason why i called my test file and my test functions in this way. By calling a file test_* or *_test i ensure this file gets autocollected by pytest when I eventually run it. Furthermore by call 
 calling my testing functions test_something or test_something_else inside my test_something.py file those tests get picked up. 
@@ -87,7 +87,7 @@ statement will be ignored.
 
 ---
 
-## run the test/tests 
+## Runnning the test/tests 
 
 <br /> 
 
@@ -113,13 +113,13 @@ And I got a [PASSED] in glorious green color. Life is good :)
 ## Testing coverage
 
 <br /> 
-</p>
+<p></p>
 
 Test coverage measures the percentage covered area to test the feature/functionality. 
 It includes information about which parts of a program are actually executed when running our test suite to 
 determine whether all the corners of program has been covered/executed.
 
-</p>
+<p></p>
 
 What Test Coverage does
 
@@ -203,6 +203,13 @@ Its easy to maximise coverage and it could mean that the percentage of code test
 The only thing we know is that we measured what % of code has NOT been tested. For this coverage is a perfect metric.
 
 Martin Fowler has a [great](https://martinfowler.com/bliki/TestCoverage.html) article about testing coverage and his concerns have a point and it is highly recommended that you read it.
+
+
+
+
+
+
+[1] Martin Fowler " [Test Coverage](https://martinfowler.com/bliki/TestCoverage.html) "
 
 
 
