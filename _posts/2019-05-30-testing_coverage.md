@@ -71,6 +71,9 @@ I get from this the following and from what I see my function 'howmanyletters' h
 ---
 
 ## Test discoverability
+
+<br /> 
+
 <p></p>
 
 There is a reason why i called my test file and my test functions in this way. By calling a file test_* or *_test i ensure this file gets autocollected by pytest when I eventually run it. Furthermore by call 
@@ -80,10 +83,11 @@ Pytest will only execute whatever function has test* or *test in it so that when
 ```
 print(dir(covtest))
 ``` 
+
 statement will be ignored.
 
 
-</p>
+<p></p>
 
 ---
 
@@ -103,11 +107,12 @@ pytest -v
 ![calc app](https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/hypt/cov-pytest-v1.png)
 
 Yay. pytest found my test_covtest.py file and also my test_no_letters function. It run the test ... the test passed
-And I got a [PASSED] in glorious green color. Life is good :)
+And I got a [PASSED] in glorious green color. Life is good ☺️
 
 
 
-</p>
+<p></p>
+
 ---
 
 ## Testing coverage
@@ -166,7 +171,7 @@ I get
 
 ![calc app](https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/hypt/coveragereport2.png)
 
-
+<p></p>
 
 Hm... Close. 88% coverage and only one line untested. Line 11...
 
@@ -205,9 +210,13 @@ The only thing we know is that we measured what % of code has NOT been tested. F
 Martin Fowler has a [great](https://martinfowler.com/bliki/TestCoverage.html) article about testing coverage and his concerns have a point and it is highly recommended that you read it.
 
 
+Code for this post is available [here](https://github.com/mamonu/pytestcoveragedemo)
+
+TM
 
 
 
+## References
 
 [1] Martin Fowler " [Test Coverage](https://martinfowler.com/bliki/TestCoverage.html) "
 
