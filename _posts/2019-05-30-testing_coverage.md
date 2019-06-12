@@ -45,7 +45,8 @@ The main code called rather unimaginatively covdemo.py :
 <p></p>
 
 
-I also create a test file in the same directory called test_covdemo.py . Here is the test code in all its grace and beauty 
+I also create a test file in the same directory called test_covdemo.py . 
+Here is the test code in all its grace and beauty :
 
 ![calc app](https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/hypt/covdemotest.png)
 
@@ -63,7 +64,8 @@ print(dir(covtest))
 I get from this the following and from what I see my function 'howmanyletters' has been picked up by the import.Great!!!!
 
 ```
-['__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'howmanyletters', 'pytest']
+['__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', 
+'__package__', '__spec__', 'howmanyletters', 'pytest']
 ```
 
 <p></p>
@@ -96,7 +98,7 @@ statement will be ignored.
 <br /> 
 
 ok its time to run my tests. I save and exit from my programming environment and go to the terminal.
-There I put the following on the bash prompt
+There I put the following on the bash prompt:
 
 ```
 pytest -v
