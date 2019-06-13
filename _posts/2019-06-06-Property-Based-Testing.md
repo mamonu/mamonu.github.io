@@ -131,6 +131,14 @@ in a way that you have new test cases to write and guard around.
 
 And you dont need to ruin your test patterns or delete your already made tests. You can run Hypothesis-based tests side by side other tests with pytest :thumbsup: . 
 
+If you want to dl the code youve seen above click [here](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/calcs_test.zip) so you can add your own tests and play with it. Have fun! unzip it on a folder and run
+```bash
+pytest -v
+```
+on your bash terminal when you are in that folder. Simples (in a meerkat voice).
+
+
+
 ---
 ###  But im a data scientist! I deal with dataframes everyday. Little toy examples will not do!!
 <br /> 
