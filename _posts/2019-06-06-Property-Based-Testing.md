@@ -87,7 +87,7 @@ This results in:
 
 ![calc pytest](https://github.com/mamonu/mamonu.github.io/raw/master/assets/hypt/pytestresult.png)
 
-Great! everything passes! we are great. We tested everything. We also we have 100% coverage  
+Great! everything passes! we are great. We tested everything.  
 
 
 ---
