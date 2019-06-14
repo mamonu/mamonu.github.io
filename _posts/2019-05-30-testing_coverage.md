@@ -156,7 +156,7 @@ Having a look at the HTML report I see this:
 
 ![calc app](https://raw.githubusercontent.com/mamonu/mamonu.github.io/master/assets/hypt/coveragereport1.png)
 
-Hm. It says I have not covered lines 8/9/11 and that my coverage is 68% .
+Hm. It says I have not covered lines 8/9/11 and that my coverage is 62% .
 
 I add another test to cover the eventuality of character length more than 0 but less than 3.
 
