@@ -9,7 +9,9 @@ date:   24-06-2019 06:58:07 +0000
 ---
 
 
-## Code formatting: Black and Flake8 and precommit hooks
+## Code formatting: 
+
+### Using Black , Flake8 and precommit hooks
 
 <br /> 
 
@@ -24,7 +26,7 @@ read makes it easier to write.”
 There is very good guidance for writting Python code. It is called [PEP8](https://www.python.org/dev/peps/pep-0008/) and its 
 *THE official* Style Guide for Python Code. Its very easy to make your IDE give warnings if you have violated one of the many style rules.
 
-Personally when I do that, I get at least 10-20 such warnings on my first try on something :P  . 
+Personally when I do that, I get at least 10-20 such warnings on my first try on something 😛 . 
 Just having the warnings of course is half the work. Correcting the code so it passes the warnings is the other half.
 And its kind of boring to be frank. Thankfully there are tools to help with that!
 
@@ -32,7 +34,7 @@ And its kind of boring to be frank. Thankfully there are tools to help with that
 ---
 
 
-Here is where  [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black) comes into the picture
+Here is where  [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black) comes into the picture.
 
 Black formats my code, makes it readable so I dont have to do it all myself.I just need to install it from a bash terminal
 
@@ -73,11 +75,12 @@ However I want to automate this process as much as possible.
 In order to do this I will use the [pre-commit](https://github.com/pre-commit/pre-commit) framework for creating some git hook scripts.
 
 
-The maintainers describe git hook scripts as 'useful for identifying simple issues before submission to code review. 
-Running pre-commit hooks on every commit to automatically point out issues in code such as missing semicolons, trailing whitespace, and debug statements. By pointing these issues out before code review, 
-,allows a code reviewer to focus on the architecture of a change while not wasting time with trivial style nitpicks'.
+The maintainers describe git hook scripts as 'useful for identifying simple issues before submission to code review'. 
+Running pre-commit hooks on every commit to automatically point out issues in code such as missing semicolons, trailing whitespace, etc. By pointing these issues out before code review, a code reviewer can focus on the architecture of a change while not wasting time with trivial style nitpicks.
+
+
 Even if someone doesnt develop code that is under a code review process , automatic code style enforcement is still 
-useful for the 'future-self' :) .
+useful for our 'future-self' 😀 .
 
 
 In order to get this process automated I will need to do the following things:
