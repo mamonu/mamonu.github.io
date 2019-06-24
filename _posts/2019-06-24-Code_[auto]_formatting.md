@@ -9,7 +9,7 @@ date:   24-06-2019 06:58:07 +0000
 ---
 
 
-## Code formatting: 
+## Code formatting 
 
 ### Using Black , Flake8 and precommit hooks
 
