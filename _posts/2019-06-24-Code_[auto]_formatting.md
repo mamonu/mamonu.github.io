@@ -80,13 +80,12 @@ Running pre-commit hooks on every commit to automatically point out issues in co
 
 
 Even if someone doesnt develop code that is under a code review process , automatic code style enforcement is still 
-useful for our 'future-self' 😀 .
-
-
-In order to get this process automated I will need to do the following things:
+useful for our 'future-self' 😀 . In order to get this process automated I will need to do the following things:
 
 <br /> 
 #### step 1: install pre-commit by entering the following on a bash terminal prompt:
+<br /> 
+
 
 ```bash
 pip install pre-commit
@@ -94,7 +93,7 @@ pip install pre-commit
 
 <br /> 
 #### step 2: add the following code on a file named `.pre-commit-config.yaml` on the folder where my code is:
-
+<br /> 
 
 ```yaml
 repos:
@@ -115,6 +114,7 @@ know it should be working on.
 
 <br /> 
 #### step 3: run on a bash terminal on folder where code is :
+<br /> 
 
 ```bash
 pre-commit install
@@ -123,7 +123,7 @@ This installs the hooks above to the .git/ directory
 
 <br /> 
 #### step 4 : add `pyproject.toml` on the code directory which has the following:
-
+<br /> 
 
 ```toml
 [tool.black]
@@ -150,6 +150,7 @@ as to not have issues with flake8.
 
 <br /> 
 #### step 5: add `.flake8` file on the code directory :
+<br /> 
 
 flake8 performs a final check for compliance to PEP8. Since the code has been through black there should not be any suprises.
 If you want some of the rules ignored then you can find all PEP8 rules [here](https://www.python.org/dev/peps/#finished-peps-done-with-a-stable-interface)
@@ -167,6 +168,7 @@ Note that the max-line-length is 79 on flake8.
 
 <br /> 
 #### step 6: now use git with our added pre-commit hooks  :
+<br /> 
 
 I assume there has been a 'git init' statement and some added code already. If not do that first!Then:
 
@@ -191,6 +193,8 @@ git push
 If everything passes (and assuming you have setup your remote repo address), the commit is made. 
 If not, perform necessary edits and then commit again.
 
+
+code for everything mentioned above is availiable [here]()
 
 
 
