@@ -49,11 +49,9 @@ where you can copy and paste some Python and see how it would look formatted by 
 ### Code formatting: minimal-ish viable project to use black and flake8 
 
 
-I want to create however a way to do it on my code automatically.And to setup if not the most minimal configuration, at least a simple one that I want to set and forget!
-
-As a simple example I have some code that has some style issues. One line has way too much code.
-Some others have weird spacing. Nothing is failing but its not very readable.BTW this is just some code using
-the great [ciw](https://github.com/CiwPython/Ciw) package.
+I want to create however a way to do it on my code automatically.And to setup if not the most minimal configuration, 
+at least a simple one that I want to set and forget! As a simple example I have some code that has some 
+style issues. One line has way too much code.Some others have weird spacing. Nothing is failing but its not very readable.BTW this is just some code using the great [ciw](https://github.com/CiwPython/Ciw) package.
 
 ![ciw app](https://github.com/mamonu/mamonu.github.io/raw/master/assets/cmft/ciw-preblack.png)
 
