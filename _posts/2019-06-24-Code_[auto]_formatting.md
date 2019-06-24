@@ -1,6 +1,6 @@
 --
 layout: single
-title: "Code [auto]formatting"
+title: "Code auto formatting"
 header:
   overlay_image: https://github.com/mamonu/mamonu.github.io/raw/master/assets/cmft/codefmt-bg.jpg
   overlay_filter: 0.75
