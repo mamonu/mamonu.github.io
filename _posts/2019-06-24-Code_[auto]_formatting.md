@@ -47,7 +47,7 @@ where you can copy and paste some Python and see how it would look formatted by 
 
 <br /> 
 ### Code formatting: minimal-ish viable project to use black and flake8 
-
+---
 
 I want to create however a way to do it on my code automatically.And to setup if not the most minimal configuration, 
 at least a simple one that I want to set and forget! As a simple example I have some code that has some 
@@ -91,7 +91,7 @@ pip install pre-commit
 ```
 
 <br /> 
-#### step 2: add the following code on a file named `.pre-commit-config.yaml` on the folder my code is:
+#### step 2: add the following code on a file named `.pre-commit-config.yaml` on the folder where my code is:
 
 
 ```yaml
@@ -112,11 +112,12 @@ know it should be working on.
 
 
 <br /> 
-#### step 3: run the following on a bash terminal on the code directory.This installs the hooks above to the .git/ directory
+#### step 3: run on a bash terminal on folder where code is :
 
 ```bash
 pre-commit install
 ```
+This installs the hooks above to the .git/ directory
 
 <br /> 
 #### step 4 : add `pyproject.toml` on the code directory which has the following:
