@@ -26,7 +26,8 @@ Robert Martin on his book 'Clean Code' mentions that:
 > read makes it easier to write.” 
 
 There is very good guidance for writting Python code. It is called [PEP8](https://www.python.org/dev/peps/pep-0008/) and its 
-*THE official* Style Guide for Python Code. Its very easy to make your IDE give warnings if you have violated one of the many style rules.
+*THE official* Style Guide for Python Code. The process of styling and checking code quality, is often referred as linting.
+Its very easy to make your IDE give linter warnings if you have violated one of the many style rules.
 
 
 Some examples of PEP8 coding conventions are:
