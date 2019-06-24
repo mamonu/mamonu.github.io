@@ -17,7 +17,7 @@ date:   24-06-2019 06:58:07 +0000
 
 Working reproducibly means having to use commonly accepted code practices. I have been talking in previous blog posts 
 about the need for a process that ensures that code that is tested. Today I will talk about the need
-to also have codebases that are ... readable. Because its not enough for the code to compile! 
+to also have codebases that are ... readable. Because its not enough for the code just to compile! 
 
 Robert Martin on his book 'Clean Code' mentions that:
 
@@ -28,10 +28,19 @@ Robert Martin on his book 'Clean Code' mentions that:
 There is very good guidance for writting Python code. It is called [PEP8](https://www.python.org/dev/peps/pep-0008/) and its 
 *THE official* Style Guide for Python Code. Its very easy to make your IDE give warnings if you have violated one of the many style rules.
 
-Personally when I do that, I get at least 10-20 such warnings on my first try on something 😛 . 
-Just having the warnings of course is half the work. Correcting the code so it passes the warnings is the other half.
-And its kind of boring to be frank. Thankfully there are tools to help with that!
 
+Some examples of PEP8 coding conventions are:
+
+        Spaces are the preferred indentation method.
+        Use 4 spaces per indentation level.
+        Limit all lines to a maximum of 79 characters.
+        Separate top-level function and class definitions with two blank lines.
+        Method definitions inside a class are surrounded by a single blank line.
+
+  
+Personally when I use VS Code editor to warn me , I get at least 10-20 such warnings on my first try on something 😛 . 
+Just having the warnings of course is half the work. Correcting the code so it doesnt give warnings is the other half.
+And its kind of boring to be frank. Thankfully there are tools to help with that!
 
 ---
 
@@ -80,7 +89,13 @@ Running pre-commit hooks on every commit to automatically point out issues in co
 
 
 Even if someone doesnt develop code that is under a code review process , automatic code style enforcement is still 
-useful for our 'future-self' 😀 . In order to get this process automated I will need to do the following things:
+useful for our 'future-self' 😀 . In order to get this process automated I will need to do the following :
+
+<br /> 
+
+### pre-commit setup to use black formatter and flake8 linter
+
+---
 
 <br /> 
 #### step 1: install pre-commit by entering the following on a bash terminal prompt:
