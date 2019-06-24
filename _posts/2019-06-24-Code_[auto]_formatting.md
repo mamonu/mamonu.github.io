@@ -11,7 +11,7 @@ date:   24-06-2019 06:58:07 +0000
 
 ## Code formatting: Black and Flake8 and precommit hooks
 
-
+<br /> 
 
 Working reproducibly means having to use commonly accepted code practices.I have been talking in previous blog posts 
 about the need for a process that ensures that code that is tested. Today I will talk about the need
@@ -43,8 +43,11 @@ pip install black
 There is a [black Playground](https://black.now.sh/?version=stable&state=_Td6WFoAAATm1rRGAgAhARYAAAB0L-Wj4ARIAmpdAD2IimZxl1N_WlkPinBFoXIfdFTaTVkGVeHShArYj9yPlDvwBA7LhGo8BvRQqDilPtgsfdKl-ha7EFp0Ma6lY_06IceKiVsJ3BpoICJM9wU1VJLD7l3qd5xTmo78LqThf9uibGWcWCD16LBOn0JK8rhhx_Gf2ClySDJtvm7zQJ1Z-Ipmv9D7I_zhjztfi2UTVsJp7917XToHBm2EoNZqyE8homtGskFIiif5EZthHQvvOj8S2gJx8_t_UpWp1ScpIsD_Xq83LX-B956I_EBIeNoGwZZPFC5zAIoMeiaC1jU-sdOHVucLJM_x-jkzMvK8Utdfvp9MMvKyTfb_BZoe0-FAc2ZVlXEpwYgJVAGdCXv3lQT4bpTXyBwDrDVrUeJEg5cXH4TUTNf-yo029ofjTcZgdwbwkBGElHbHHsQNOhuA4R9GbE2Xx6TfVmH9I4AsqU3ohV7t3GkBwkM8XInLiVOQZ4p5yjM-SW4u3I6_BUS8o2djSZaPvzZPDScXVk1OXu3w0wV7DfrgiK_dpzHntoOvqSHrNLg-Ea6zvV6G2nil3QBTBPl5PDtMwDKchtvwmlhnbvTOrh53X9EnSe8QtRKbMLO4pxx4bAJX-hVCXl5OHpCGZLowD7JdKj1-NctJy9DL99yr-X6yu7KwGCYG7t3fm-lt7Lg_HS9xbBrWDVKBKwM2F7hmR1_n9RFjznRBHD3OpHKlgiWjbWJI0Q6GhXazSt_NVH1KtFiY_UPzzuchkeq2AcjGvQd3-ZPkoFJkNU1Xx7q1i62bM0OKwmDiCfvkAawxnd7m-XNxYKWe-wOQsezLPJVoqGQVoAAAAMKfaCNgGGWKAAGGBckIAABcXArGscRn-wIAAAAABFla)
 where you can copy and paste some Python and see how it would look formatted by black.Have a look!
 
-I want to create however a way to do it on my code automatically.And to setup if not the most minimal configuration, at least a 
-simple one that I want to set and forget!
+<br /> 
+### Code formatting: minimal-ish viable project to use black and flake8 
+<br /> 
+
+I want to create however a way to do it on my code automatically.And to setup if not the most minimal configuration, at least a simple one that I want to set and forget!
 
 As a simple example I have some code that has some style issues. One line has way too much code.
 Some others have weird spacing. Nothing is failing but its not very readable.BTW this is just some code using
@@ -79,12 +82,14 @@ useful for the 'future-self' :) .
 
 In order to get this process automated I will need to do the following things:
 
+<br /> 
 #### step 1: install pre-commit by entering the following on a bash terminal prompt:
 
 ```bash
 pip install pre-commit
 ```
 
+<br /> 
 #### step 2: add the following code on a file named `.pre-commit-config.yaml` on the folder my code is:
 
 
@@ -105,13 +110,14 @@ I am adding black as a hook and also an existing one for flake8.Note that I am d
 know it should be working on.
 
 
-
+<br /> 
 #### step 3: run the following on a bash terminal on the code directory.This installs the hooks above to the .git/ directory
 
 ```bash
 pre-commit install
 ```
 
+<br /> 
 #### step 4 : add `pyproject.toml` on the code directory which has the following:
 
 
@@ -138,7 +144,7 @@ You can add anything you DONT want black to change on the exclude part.
 Note that the max-line-length is set to 79.Black has something like 88 as default but I have changed it to 79 so
 as to not have issues with flake8. 
 
-
+<br /> 
 #### step 5: add `.flake8` file on the code directory :
 
 flake8 performs a final check for compliance to PEP8. Since the code has been through black there should not be any suprises.
@@ -155,6 +161,7 @@ select = B,C,E,F,W,T4,B9
 
 Note that the max-line-length is 79 on flake8.
 
+<br /> 
 #### step 6: now use git with our added pre-commit hooks  :
 
 I assume there has been a 'git init' statement and some added code already. If not do that first!Then:
