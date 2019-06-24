@@ -1,12 +1,13 @@
---
+---
 layout: single
 title: "Code auto formatting"
 header:
   overlay_image: https://github.com/mamonu/mamonu.github.io/raw/master/assets/cmft/codefmt-bg.jpg
   overlay_filter: 0.75
   teaser: https://github.com/mamonu/mamonu.github.io/raw/master/assets/cmft/codefmt-bg.jpg
-date:   24-06-2019 22:58:07 +0000
+date:   24-06-2019 06:58:07 +0000
 ---
+
 
 ## Code formatting: Black and Flake8 and precommit hooks
 
