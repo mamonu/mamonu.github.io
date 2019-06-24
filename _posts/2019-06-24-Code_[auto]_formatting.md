@@ -46,7 +46,9 @@ There is a [black Playground](https://black.now.sh/?version=stable&state=_Td6WFo
 where you can copy and paste some Python and see how it would look formatted by black.Have a look!
 
 <br /> 
+
 ### Code formatting: minimal-ish viable project to use black and flake8 
+
 <br /> 
 
 I want to create however a way to do it on my code automatically.And to setup if not the most minimal configuration, at least a simple one that I want to set and forget!
