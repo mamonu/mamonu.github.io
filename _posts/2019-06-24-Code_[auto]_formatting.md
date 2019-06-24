@@ -9,19 +9,21 @@ date:   24-06-2019 06:58:07 +0000
 ---
 
 
-## Code formatting 
+## Code formatting in Python
 
 ### Using Black , Flake8 and precommit hooks
 
 <br /> 
 
-Working reproducibly means having to use commonly accepted code practices.I have been talking in previous blog posts 
+Working reproducibly means having to use commonly accepted code practices. I have been talking in previous blog posts 
 about the need for a process that ensures that code that is tested. Today I will talk about the need
 to also have codebases that are ... readable. Because its not enough for the code to compile! 
 
-Robert Martin on his book 'Clean Code' mentions that “the ratio of time spent reading versus writing is well over 10 to 1. 
-We are constantly reading old code as part of the effort to write new code. ...[Therefore,] making it easy to 
-read makes it easier to write.” 
+Robert Martin on his book 'Clean Code' mentions that:
+
+> “the ratio of time spent reading versus writing is well over 10 to 1. 
+> We are constantly reading old code as part of the effort to write new code. ... Therefore, making it easy to 
+> read makes it easier to write.” 
 
 There is very good guidance for writting Python code. It is called [PEP8](https://www.python.org/dev/peps/pep-0008/) and its 
 *THE official* Style Guide for Python Code. Its very easy to make your IDE give warnings if you have violated one of the many style rules.
