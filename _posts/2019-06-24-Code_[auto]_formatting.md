@@ -89,11 +89,13 @@ Running pre-commit hooks on every commit to automatically point out issues in co
 
 
 Even if someone doesnt develop code that is under a code review process , automatic code style enforcement is still 
-useful for our 'future-self' 😀 . In order to get this process automated I will need to do the following :
+useful for our 'future-self' 😀 . 
 
 <br /> 
 
 ### pre-commit setup to use black formatter and flake8 linter
+
+In order to automate this process I will need to do the following :
 
 ---
 
@@ -147,8 +149,6 @@ include = '\.pyi?$'
 exclude = '''
 /(
     \.git
-  | \.hg
-  | \.mypy_cache
   | \.tox
   | \.venv
   | _build
