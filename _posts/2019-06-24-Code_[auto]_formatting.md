@@ -173,11 +173,11 @@ select = B,C,E,F,W,T4,B9
 
 Note that the max-line-length is 79 on flake8 as per PEP8. If needed we can also add here a limit on cyclomatic complexity by adding something like `max-complexity = 20` to the `.flake8` file. 
 
+<br /> 
 #### small sidestep into code complexity
-
+<br /> 
 
 ![needlesly complex](https://www.jta.org/wp-content/uploads/2012/05/url.gif)
-
 ###### Above...a needlessly complicated contraption from Rube Goldberg. :grin:
 
 
