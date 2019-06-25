@@ -25,18 +25,8 @@ Robert Martin on his book 'Clean Code' mentions that:
 
 There is very good guidance for writting Python code. It is called [PEP8](https://www.python.org/dev/peps/pep-0008/) and its 
 *THE official* Style Guide for Python Code. The process of styling and checking code quality, is often referred as linting.
-Its very easy to make your IDE give linter warnings if you have violated one of the many style rules.
+Its very easy to make your IDE give linter warnings if you have violated one of the many style rules. One such linter is `flake8`.
 
-
-Some examples of PEP8 coding conventions are:
-
-    Spaces are the preferred indentation method.
-    Use 4 spaces per indentation level.
-    Limit all lines to a maximum of 79 characters.
-    Separate top-level function and class definitions with two blank lines.
-    Method definitions inside a class are surrounded by a single blank line.
-
-  
 Personally when I use VS Code editor to warn me , I get at least 10-20 such warnings on my first try on something 😛 . 
 Just having the warnings of course is half the work. Correcting the code so it doesnt give warnings is the other half.
 And its kind of boring to be frank. Thankfully there are tools to help with that!
