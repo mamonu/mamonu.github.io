@@ -178,7 +178,7 @@ Note that the max-line-length is 79 on flake8 as per PEP8. If needed we can also
 
 ![needlesly complex](https://www.jta.org/wp-content/uploads/2012/05/url.gif)
 
-Above...a needlessly complicated contraption from Rube Goldberg. :grin:
+###### Above...a needlessly complicated contraption from Rube Goldberg. :grin:
 
 
 > Cyclomatic complexity is a software metric used to indicate the complexity of a program. It is a quantitative measure 
