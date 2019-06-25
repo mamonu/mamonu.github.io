@@ -186,10 +186,6 @@ Above...a needlessly complicated contraption from Rube Goldberg. 😂
 
 Some people put a limit on this complexity.Others claim that its as useful as LOC (Lines of Code) as a metric. I personaly do not use it, but if I did, I would probably be interested in the complexity per function instead of the complexity of the whole program file ... Python package `radon` can be used to calculate complexity per function so if you are interested in this just `pip install radon` and read the [documentation](https://radon.readthedocs.io/en/latest/intro.html).
 
-![needlesly complex](https://www.jta.org/wp-content/uploads/2012/05/url.gif)
-Above...a needlessly complicated contraption from Rube Goldberg.
-
-
 You are the person deciding if its something you want for your project but anyway with `flake8` the functionality is offered should you want it to stop your commit if its too complex as a way to enforce refactoring.
 
 <br /> 
@@ -236,7 +232,7 @@ want them.
  
  [4] [flake8](http://flake8.pycqa.org/en/latest/index.html) documentation
  
- [6] [Ruby Goldberg style needlesly complex machines video clip!](https://www.youtube.com/watch?v=qybUFnY7Y8w)
+ [5] [Ruby Goldberg style needlesly complex machines video clip!](https://www.youtube.com/watch?v=qybUFnY7Y8w)
  
  
  
