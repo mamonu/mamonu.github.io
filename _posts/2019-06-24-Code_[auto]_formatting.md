@@ -15,9 +15,7 @@ date:   24-06-2019 06:58:07 +0000
 
 <br /> 
 
-Working reproducibly means having to use commonly accepted code practices. I have been talking in previous blog posts 
-about the need for a process that ensures that code that is tested. Today I will talk about the need
-to also have codebases that are ... readable. Because its not enough for the code just to compile! 
+I have been talking in previous blog posts about the need for a process that ensures that code that is tested. Today I will talk about the need to also have code that is ... readable. Because its not enough for the code just to compile! 
 
 Robert Martin on his book 'Clean Code' mentions that:
 
@@ -180,7 +178,9 @@ select = B,C,E,F,W,T4,B9
 ```
 
 
-Note that the max-line-length is 79 on flake8.
+Note that the max-line-length is 79 on flake8 as per PEP8. If needed we can also add here a limit on cyclomatic complexity by adding something like `max-complexity = 10` to the `.flake8` file. 
+Cyclomatic complexity is a software metric used to indicate the complexity of a program. It is a quantitative measure of the number of linearly independent paths through a program's source code.Some people put a limit on this complexity. 
+Others claim that its as useful as LOC (Lines of Code) as a metric. You are the person deciding if its something you want for your project but anyway the functionality is offered should you want it to stop your commit if its too complex as a way to enforce refactoring.
 
 <br /> 
 #### step 6: now use git with our added pre-commit hooks  :
@@ -210,8 +210,10 @@ If everything passes (and assuming you have setup your remote repo address), the
 If not, perform necessary edits and then commit again.
 
 
-code for everything mentioned above is availiable [here]()
+Code for everything mentioned above is availiable [here](https://github.com/mamonu/qiwdemo)
 
+If you try pre-commit hooks and dont like them just do a `git init` and delete the `.flake8`,`.toml`,`.yaml` files from your code directory! Also the way we set it up pre-commit hooks are per project so other projects will not have them if you dont
+want them.
 
 
 ### References 
