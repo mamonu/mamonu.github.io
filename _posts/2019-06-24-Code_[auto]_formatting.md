@@ -178,9 +178,16 @@ select = B,C,E,F,W,T4,B9
 ```
 
 
-Note that the max-line-length is 79 on flake8 as per PEP8. If needed we can also add here a limit on cyclomatic complexity by adding something like `max-complexity = 10` to the `.flake8` file. 
-Cyclomatic complexity is a software metric used to indicate the complexity of a program. It is a quantitative measure of the number of linearly independent paths through a program's source code.Some people put a limit on this complexity. 
-Others claim that its as useful as LOC (Lines of Code) as a metric. You are the person deciding if its something you want for your project but anyway the functionality is offered should you want it to stop your commit if its too complex as a way to enforce refactoring.
+Note that the max-line-length is 79 on flake8 as per PEP8. If needed we can also add here a limit on cyclomatic complexity by adding something like `max-complexity = 20` to the `.flake8` file. 
+
+##### small sidestep into code complexity
+
+> Cyclomatic complexity is a software metric used to indicate the complexity of a program. It is a quantitative measure 
+> of the number of linearly independent paths through a program's source code.
+
+Some people put a limit on this complexity.Others claim that its as useful as LOC (Lines of Code) as a metric. I personaly do not use it, but if I did, I would probably be interested in the complexity per function instead of the complexity of the whole program file ... Python package `radon` can be used to calculate complexity per function so if you are interested in this just `pip install radon` and read the [documentation](https://radon.readthedocs.io/en/latest/intro.html).
+
+You are the person deciding if its something you want for your project but anyway with `flake8` the functionality is offered should you want it to stop your commit if its too complex as a way to enforce refactoring.
 
 <br /> 
 #### step 6: now use git with our added pre-commit hooks  :
