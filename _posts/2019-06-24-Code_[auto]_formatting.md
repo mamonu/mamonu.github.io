@@ -83,10 +83,13 @@ However I want to automate this process as much as possible.
 In order to do this I will use the [pre-commit](https://github.com/pre-commit/pre-commit) framework for creating some git hook scripts.
 
 
-The maintainers describe git hook scripts as 'useful for identifying simple issues before submission to code review'. 
-Running pre-commit hooks on every commit to automatically point out issues in code such as missing semicolons, trailing whitespace, etc. By pointing these issues out before code review, a code reviewer can focus on the architecture of a change while not wasting time with trivial style nitpicks.
+The maintainers describe [git hook](https://git-scm.com/docs/githooks) scripts as: 
 
+> 'useful for identifying simple issues before submission to code review. Pre-commit hooks on every commit automatically find
+> out issues in code such as missing semicolons, trailing whitespace, etc. By pointing these issues out before code review,
+> a code reviewer can focus on the architecture of a change while not wasting time with trivial style nitpicks.'
 
+And remember we are not only finding them but we are automatically changing them to code that follows good practices.
 Even if someone doesnt develop code that is under a code review process , automatic code style enforcement is still 
 useful for our 'future-self' 😀 . 
 
@@ -180,12 +183,22 @@ select = B,C,E,F,W,T4,B9
 
 Note that the max-line-length is 79 on flake8 as per PEP8. If needed we can also add here a limit on cyclomatic complexity by adding something like `max-complexity = 20` to the `.flake8` file. 
 
-##### small sidestep into code complexity
+#### small sidestep into code complexity
+
+
+![needlesly complex](https://www.jta.org/wp-content/uploads/2012/05/url.gif)
+
+Above...a needlessly complicated contraption from Rube Goldberg. 😂
+
 
 > Cyclomatic complexity is a software metric used to indicate the complexity of a program. It is a quantitative measure 
 > of the number of linearly independent paths through a program's source code.
 
 Some people put a limit on this complexity.Others claim that its as useful as LOC (Lines of Code) as a metric. I personaly do not use it, but if I did, I would probably be interested in the complexity per function instead of the complexity of the whole program file ... Python package `radon` can be used to calculate complexity per function so if you are interested in this just `pip install radon` and read the [documentation](https://radon.readthedocs.io/en/latest/intro.html).
+
+![needlesly complex](https://www.jta.org/wp-content/uploads/2012/05/url.gif)
+Above...a needlessly complicated contraption from Rube Goldberg.
+
 
 You are the person deciding if its something you want for your project but anyway with `flake8` the functionality is offered should you want it to stop your commit if its too complex as a way to enforce refactoring.
 
