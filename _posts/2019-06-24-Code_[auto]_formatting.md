@@ -30,11 +30,11 @@ Its very easy to make your IDE give linter warnings if you have violated one of 
 
 Some examples of PEP8 coding conventions are:
 
-        Spaces are the preferred indentation method.
-        Use 4 spaces per indentation level.
-        Limit all lines to a maximum of 79 characters.
-        Separate top-level function and class definitions with two blank lines.
-        Method definitions inside a class are surrounded by a single blank line.
+    Spaces are the preferred indentation method.
+    Use 4 spaces per indentation level.
+    Limit all lines to a maximum of 79 characters.
+    Separate top-level function and class definitions with two blank lines.
+    Method definitions inside a class are surrounded by a single blank line.
 
   
 Personally when I use VS Code editor to warn me , I get at least 10-20 such warnings on my first try on something 😛 . 
@@ -246,7 +246,7 @@ want them.
  
  [4] [flake8](http://flake8.pycqa.org/en/latest/index.html) documentation
  
- 
+ [6] [Ruby Goldberg style needlesly complex machines video clip!](https://www.youtube.com/watch?v=qybUFnY7Y8w)
  
  
  
