@@ -27,7 +27,7 @@ There is very good guidance for writting Python code. It is called [PEP8](https:
 *THE official* Style Guide for Python Code. The process of styling and checking code quality, is often referred as linting.
 Its very easy to make your IDE give linter warnings if you have violated one of the many style rules. One such linter is `flake8`.
 
-Personally when I use VS Code editor to warn me , I get at least 10-20 such warnings on my first try on something 😛 . 
+Personally when I use VS Code editor to warn me , I get at least 10-20 such warnings on my first try on something :smiley: . 
 Just having the warnings of course is half the work. Correcting the code so it doesnt give warnings is the other half.
 And its kind of boring to be frank. Thankfully there are tools to help with that!
 
@@ -81,7 +81,7 @@ The maintainers describe [git hook](https://git-scm.com/docs/githooks) scripts a
 
 And remember we are not only finding them but we are automatically changing them to code that follows good practices.
 Even if someone doesnt develop code that is under a code review process , automatic code style enforcement is still 
-useful for our 'future-self' 😀 . 
+useful for our 'future-self' :stuck_out_tongue_closed_eyes: . 
 
 <br /> 
 
@@ -178,7 +178,7 @@ Note that the max-line-length is 79 on flake8 as per PEP8. If needed we can also
 
 ![needlesly complex](https://www.jta.org/wp-content/uploads/2012/05/url.gif)
 
-Above...a needlessly complicated contraption from Rube Goldberg. 😂
+Above...a needlessly complicated contraption from Rube Goldberg. :grin:
 
 
 > Cyclomatic complexity is a software metric used to indicate the complexity of a program. It is a quantitative measure 
