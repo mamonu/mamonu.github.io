@@ -25,6 +25,15 @@ Robert Martin on his book 'Clean Code' mentions that:
 
 There is very good guidance for writting Python code. It is called [PEP8](https://www.python.org/dev/peps/pep-0008/) and its 
 *THE official* Style Guide for Python Code. The process of styling and checking code quality, is often referred as linting.
+
+Linters analyze code to detect various categories of 'lint' or small micro-defects. Those categories can be broadly defined as the following:
+
+
+- Code errors
+- Code with potentially unintended results
+- Dangerous code patterns
+- Stylistic errors
+
 Its very easy to make your IDE give linter warnings if you have violated one of the many style rules. One such linter is `flake8`.
 
 Personally when I use VS Code editor to warn me , I get at least 10-20 such warnings on my first try on something :smiley: . 
