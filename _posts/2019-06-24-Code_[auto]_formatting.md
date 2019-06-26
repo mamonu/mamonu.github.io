@@ -70,10 +70,9 @@ The result looks much better
 However I want to automate this process as much as possible. 
 
 
-In order to do this I will use the [pre-commit](https://github.com/pre-commit/pre-commit) framework for creating some git hook scripts.
+In order to do this I will use the [pre-commit](https://github.com/pre-commit/pre-commit) framework for creating some [git hook](https://git-scm.com/docs/githooks) scripts.
 
-
-The maintainers describe [git hook](https://git-scm.com/docs/githooks) scripts as: 
+The maintainers describe pre-commit git hook scripts as: 
 
 > 'useful for identifying simple issues before submission to code review. Pre-commit hooks on every commit automatically find
 > out issues in code such as missing semicolons, trailing whitespace, etc. By pointing these issues out before code review,
