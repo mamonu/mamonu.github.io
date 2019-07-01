@@ -42,7 +42,6 @@
       {% elsif post.date %}
         <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y " }}</time>&emsp;
       {% endif %}
-      {% if post.read_time %}<i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;{% include read-time.html %}{% endif %}
     </p>
     <!-- end mamonu date read-time meta line -->
     
