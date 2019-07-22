@@ -242,5 +242,7 @@ want them.
  
  [5] [Ruby Goldberg style needlesly complex machines video clip!](https://www.youtube.com/watch?v=qybUFnY7Y8w)
  
+ [6] [pre-commit hooks for R projects](https://github.com/lorenzwalthert/pre-commit-hooks)
+ 
  
  
