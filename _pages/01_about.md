@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-# Theodore Manassis 
+#  Theodore Manassis 
 
 <br /> 
 
@@ -24,7 +24,7 @@ Not a [ninja,rockstar,influencer] or any other LinkedIn bo%^*cks
 
 <br /> 
 
-#### Interests
+#### Interests 🤖
 
 ```markdown
 
@@ -42,10 +42,11 @@ Not a [ninja,rockstar,influencer] or any other LinkedIn bo%^*cks
   - Profiling and finding ways to run code faster 
   - Lisp-family functional languages such as Clojure
   - Functional Languages in general 
+  - Sound / Audio / DSP 
 
 ```
 
-#### ACADEMIC QUALIFICATIONS
+#### ACADEMIC QUALIFICATIONS 🎓
 
 ```markdown
 2014,CARDIFF UNIVERSITY 
@@ -68,7 +69,7 @@ Feel free to reach out on Twitter (click on the twitter icon below).
 
 
 
-#### some links:
+#### some links: 💻
 
 
 
