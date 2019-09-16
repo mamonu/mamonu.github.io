@@ -6,15 +6,16 @@ permalink: /about/
 
 #  Theodore Manassis 
 
-<br /> 
 
 
-Data Scientist at the Office for National Statistics [Big Data](https://onsbigdata.github.io/) team interested in the intersection of  Statistics , Computer Science , Machine Learning and Data Visualization. And cats.
+Data Scientist at the Ministry of Justice 
+<br /> interested in the intersection of  Statistics , Computer Science , Machine Learning and Data Visualization. And cats.
 
 
 
 
-Previously I worked in the private sector as a programmer working with Perl,Java and C++.
+I worked in the Office for National Statistics [Big Data](https://onsbigdata.github.io/) team for some years.
+Previously I was employed in the private sector as a programmer working with Perl,Java and C++.
 
 Not a [ninja,rockstar,influencer] or any other LinkedIn bo%^*cks
 
