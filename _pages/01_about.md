@@ -8,13 +8,12 @@ permalink: /about/
 
 
 
-Data Scientist at the Ministry of Justice 
-<br /> interested in the intersection of  Statistics , Computer Science , Machine Learning and Data Visualization. And cats.
+Data Scientist at the Ministry of Justice ,interested in the intersection of  Statistics , Computer Science , Machine Learning and Data Visualization. And cats.
 
 
+<br />
 
-
-I worked in the Office for National Statistics [Big Data](https://onsbigdata.github.io/) team for some years.
+Before MoJ,I worked in the Office for National Statistics [Big Data](https://onsbigdata.github.io/) team.
 Previously I was employed in the private sector as a programmer working with Perl,Java and C++.
 
 Not a [ninja,rockstar,influencer] or any other LinkedIn bo%^*cks
