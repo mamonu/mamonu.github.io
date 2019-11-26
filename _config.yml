@@ -39,7 +39,7 @@ author:
   name             : "Theodore Manassis"
   avatar           : "/assets/robo.jpg"
   bio              : "Data Scientist"
-  location         : "Winchester"
+  location         : "Epsom"
   email            :
   links:
     - label: "Email"
@@ -150,7 +150,7 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
+paginate: 8 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
