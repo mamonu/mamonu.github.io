@@ -1,9 +1,12 @@
-<div class="page__footer-follow">
+
+<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<div id="particles-js">
+ <div class="page__footer-follow">
   <ul class="social-icons">
     {% if site.data.ui-text[site.locale].follow_label %}
       <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
     {% endif %}
-<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     {% if site.footer.links %}
       {% for link in site.footer.links %}
         {% if link.label and link.url %}
@@ -16,5 +19,6 @@
   </ul>
 </div>
 
-<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</div>
+
 <div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
