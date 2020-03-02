@@ -2,6 +2,8 @@
 layout: single
 title: About
 permalink: /about/
+jsarr:
+- assets/app.js
 ---
 
 #  Theodore Manassis 
