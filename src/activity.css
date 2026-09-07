@@ -1,0 +1,81 @@
+.is-activity #journey { display: none; }
+.is-activity .compact-nav { opacity: 1; pointer-events: auto; visibility: visible; }
+.is-activity .site-footer { visibility: hidden; }
+.activity { position: fixed; inset: 0; z-index: 3; color: #d9c9ee; pointer-events: none; }
+.activity[hidden], .activity [hidden] { display: none !important; }
+.activity-panel { pointer-events: auto; }
+.activity-heading { position: absolute; top: 88px; left: 3.4vw; display: flex; align-items: baseline; gap: 18px; }
+.activity h1 { color: #e9dcfa; font-size: .85rem; font-weight: 400; letter-spacing: -.025em; margin: 0; line-height: 1.3; }
+.activity h1:focus { outline: none; }
+.activity-profile { color: #a28ab7; font-size: .65rem; }
+.activity-years { position: absolute; top: 78px; right: 3.4vw; display: flex; flex-direction: row-reverse; align-items: center; gap: 16px; }
+.activity select, .activity input { color-scheme: dark; font: inherit; color: #e8d8f8; background: #110b20a6; border: 1px solid #9e7abe40; border-radius: 6px; }
+.activity select { padding: 8px 12px; min-height: 36px; font-size: .8rem; }
+.activity-year-total { color: #a28ab7; font-size: .65rem; margin: 0; }
+.activity-inspector { position: absolute; bottom: 25px; left: 3.4vw; right: 3.4vw; display: flex; justify-content: space-between; align-items: center; gap: 20px; pointer-events: none; }
+.activity-reading { display: grid; grid-template-columns: auto auto; align-items: baseline; gap: 6px 16px; pointer-events: auto; }
+.activity-count { color: #efddff; font-size: .95rem; letter-spacing: -.035em; }
+.activity-date-copy { margin: 0; color: #a792be; font-size: .65rem; }
+.activity-pin { grid-column: 1 / -1; font-size: .58rem; color: #a792be; }
+.activity-pin:empty { display: none; }
+.activity-date-controls { display: flex; align-items: center; gap: 16px; position: relative; pointer-events: auto; }
+.activity-date-row { display: flex; gap: 5px; }
+.activity-date-row input { width: 145px; min-width: 0; padding: 8px; font-size: .7rem; }
+.activity button { cursor: pointer; font: inherit; }
+.activity-date-row button { width: 36px; height: 36px; border-radius: 6px; border: 1px solid #9e7abe40; color: #d9c0f0; background: #110b20a6; }
+.activity button:disabled { opacity: .3; cursor: default; }
+.activity button:hover:not(:disabled), .activity a:hover { color: #fff; border-color: #cca4f2; }
+.activity :is(a, button, select, input):focus-visible { outline: 2px solid #dfb6ff; outline-offset: 5px; }
+.activity-table-toggle { color: #b99ad3; background: none; border: 0; padding: 10px 0; font-size: .62rem !important; }
+.activity-date-help { position: absolute; bottom: 100%; right: 0; max-width: 270px; color: #e0b4c1; font-size: .65rem; margin: 8px 0; background: #100b1b; }
+.activity-date-help:empty { display: none; }
+.activity-coverage { margin: 0 0 20px; font-size: .58rem; line-height: 1.6; color: #a08bb0; }
+.activity-message { position: absolute; top: 45%; left: 10%; right: 10%; text-align: center; color: #bda5d4; font-size: .85rem; }
+.activity-message:empty { display: none; }
+.activity-retry { position: absolute; top: 55%; left: 50%; transform: translateX(-50%); background: #1f122e; color: #e5cffa; border: 1px solid #ba8de966; border-radius: 5px; padding: 12px 20px; }
+.activity-legend { position: absolute; bottom: 83px; left: 3.4vw; color: #9581a6; font-size: .55rem; display: flex; align-items: center; gap: 8px; margin: 0; }
+.activity-legend span { width: 4px; height: 4px; border-radius: 50%; background: #bd92eb; box-shadow: 0 0 14px #ab68e4; }
+.activity-legend i { color: #64516f; font-style: normal; }
+.activity-months { position: fixed; inset: 0; pointer-events: none; }
+.activity-month { position: absolute; color: #b295ca; font-size: .68rem; letter-spacing: .09em; text-shadow: 0 2px 8px #070510; }
+.activity-month-empty { color: #84738f; }
+.activity-month-empty::after { content: 'No data'; display: block; font-size: .57rem; letter-spacing: 0; margin-top: 18px; }
+.activity-table-wrap { position: absolute; right: 3.4vw; width: min(420px, 93.2vw); top: 130px; bottom: 90px; overflow: auto; overscroll-behavior: contain; padding: 24px; background: #0d0918f5; backdrop-filter: blur(18px); border: 1px solid #9e7abe44; border-radius: 8px; scrollbar-width: thin; }
+.activity-table-wrap h2 { font-size: 1rem; font-weight: 400; margin: 0 0 12px; }
+.activity table { width: 100%; border-collapse: collapse; font-size: .7rem; font-variant-numeric: tabular-nums; }
+.activity th { font-weight: 400; text-align: left; color: #b69dca; }
+.activity td { text-align: right; }
+.activity th, .activity td { padding: 10px 0; border-bottom: 1px solid #a480c022; }
+.activity thead th:last-child { text-align: right; }
+.activity-with-table .activity-months { visibility: hidden; }
+.activity-no-graphics .activity-table-wrap { left: 3.4vw; width: auto; }
+.is-transitioning .activity { opacity: .2; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+@media (max-width: 700px) {
+  .activity-heading { top: 132px; left: 20px; gap: 10px; }
+  .activity h1 { font-size: .72rem; }
+  .activity-profile { font-size: .58rem; }
+  .activity-years { top: 123px; right: 20px; gap: 0; }
+  .activity select { padding: 7px; font-size: .75rem; }
+  .activity-year-total { position: absolute; top: 45px; right: 0; white-space: nowrap; font-size: .56rem; }
+  .activity-inspector { bottom: 17px; left: 20px; right: 20px; flex-direction: column; align-items: stretch; gap: 12px; }
+  .activity-reading { display: flex; flex-wrap: wrap; gap: 5px 12px; }
+  .activity-count { font-size: .83rem; }
+  .activity-date-copy { margin-left: auto; font-size: .62rem; }
+  .activity-pin { width: 100%; }
+  .activity-date-controls { justify-content: space-between; gap: 10px; }
+  .activity-date-row { flex: 1; }
+  .activity-date-row input { flex: 1; width: 120px; }
+  .activity-date-row button { width: 40px; height: 40px; flex-shrink: 0; }
+  .activity-legend { bottom: 121px; left: 20px; right: 20px; font-size: .49rem; gap: 4px 6px; flex-wrap: wrap; }
+  .activity-table-wrap { top: 185px; bottom: 135px; left: 20px; right: 20px; width: auto; padding: 18px; }
+  .activity-month { font-size: .59rem; }
+}
+@media (max-height: 550px) and (min-width: 701px) {
+  .activity-heading { top: 76px; }
+  .activity-years { top: 66px; }
+  .activity-inspector { bottom: 16px; }
+  .activity-legend { bottom: 68px; }
+  .activity-table-wrap { top: 116px; bottom: 75px; }
+}
