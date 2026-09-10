@@ -7,7 +7,8 @@ const escapeHtml = value => String(value)
   .replaceAll('"', '&quot;')
   .replaceAll("'", '&#39;');
 
-const kindLabel = kind => kind === 'infobits-index' ? 'knowledge base' : kind;
+const KIND_LABELS = { 'infobits-index': 'knowledge base', 'labs-index': 'the labs' };
+const kindLabel = kind => KIND_LABELS[kind] ?? kind;
 
 export function createSignalMarkup(signal) {
   const title = escapeHtml(signal.title);
@@ -17,12 +18,17 @@ export function createSignalMarkup(signal) {
 }
 
 export function createFallbackMarkup(intro, signals) {
-  return `<section class="labs-fallback"><small>${escapeHtml(intro.eyebrow)}</small><h2>${escapeHtml(intro.heading)}</h2><p>${escapeHtml(intro.summary)}</p><a href="${escapeHtml(intro.url)}" target="_blank" rel="noopener noreferrer">visit mamonulabs ↗</a><ul>${signals.map(signal => `<li><a href="${escapeHtml(signal.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(signal.title)} ↗</a></li>`).join('')}</ul></section>`;
+  // The labs itself is the introduction's own call to action, so it is not
+  // repeated in the list of destinations below it.
+  const destinations = signals.filter(signal => signal.kind !== 'labs-index');
+  return `<section class="labs-fallback"><small>${escapeHtml(intro.eyebrow)}</small><h2>${escapeHtml(intro.heading)}</h2><p>${escapeHtml(intro.summary)}</p><a href="${escapeHtml(intro.url)}" target="_blank" rel="noopener noreferrer">visit mamonulabs ↗</a><ul>${destinations.map(signal => `<li><a href="${escapeHtml(signal.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(signal.title)} ↗</a></li>`).join('')}</ul></section>`;
 }
 
+// The transmission announces the labs; it no longer links to them. The only
+// door is the deepest signal in the field, so the journey has somewhere to end.
 export function createIntroMarkup(intro, signals) {
   const plugins = signals.filter(signal => signal.kind === 'plugin');
-  return `<small>${escapeHtml(intro.eyebrow)}</small><h2>${escapeHtml(intro.heading)}</h2><p>${escapeHtml(intro.summary)}</p><div class="labs-plugin-names">${plugins.map(signal => `<span>${escapeHtml(signal.title)}</span>`).join('')}</div><a href="${escapeHtml(intro.url)}" target="_blank" rel="noopener noreferrer">enter mamonulabs ↗</a>`;
+  return `<small>${escapeHtml(intro.eyebrow)}</small><h2>${escapeHtml(intro.heading)}</h2><p>${escapeHtml(intro.summary)}</p><div class="labs-plugin-names">${plugins.map(signal => `<span>${escapeHtml(signal.title)}</span>`).join('')}</div><em class="labs-cue">the way in is deeper <span aria-hidden="true">↓</span></em>`;
 }
 
 export function applyProjectedPosition(element, projected, enabled) {
