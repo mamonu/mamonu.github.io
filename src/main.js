@@ -13,8 +13,6 @@ const status = document.querySelector('#graphics-status');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const coarsePointer = matchMedia('(pointer: coarse)');
 let calm = reducedMotion.matches;
-// Tracks why the scene is still: a system preference, or the Pause button.
-let calmByPreference = reducedMotion.matches;
 let scene = null;
 let graphicsFailed = false;
 let desiredRoute = routeFromHash(location.hash);
@@ -80,12 +78,12 @@ function progress(value) {
   document.body.classList.toggle('is-at-end', value > 0.88);
   stage.inert = value > 0.15 || Boolean(desiredRoute);
   document.querySelector('#depth').textContent = String(Math.round(value * 100)).padStart(2, '0');
-  signalLayer.update(projectedSignals, !desiredRoute, { calm, calmByPreference });
+  signalLayer.update(projectedSignals, !desiredRoute, { calm });
 }
 
 function navigate(key, push = true) {
   desiredRoute = key;
-  signalLayer.update(projectedSignals, !key, { calm, calmByPreference });
+  signalLayer.update(projectedSignals, !key, { calm });
   const hash = key ? `#${key}` : '#home';
   if (push && location.hash !== hash) history.pushState({}, '', hash);
   if (scene && !graphicsFailed) scene.navigate(key);
@@ -122,11 +120,11 @@ function updateMotion() {
   document.querySelector('#explore-hint').textContent = calm ? 'A MOMENT OF STILLNESS' : 'MOVE TO EXPLORE';
   scene?.setCalm(calm);
   activityView.setCalm(calm);
-  signalLayer.update(projectedSignals, !desiredRoute, { calm, calmByPreference });
+  signalLayer.update(projectedSignals, !desiredRoute, { calm });
   if (!desiredRoute && calm) scrollTo(0, 0);
 }
-motion.addEventListener('click', () => { calm = !calm; calmByPreference = false; updateMotion(); });
-reducedMotion.addEventListener('change', event => { calm = event.matches; calmByPreference = event.matches; updateMotion(); });
+motion.addEventListener('click', () => { calm = !calm; updateMotion(); });
+reducedMotion.addEventListener('change', event => { calm = event.matches; updateMotion(); });
 updateMotion();
 
 document.querySelector('#enter').addEventListener('click', () => {
@@ -157,7 +155,7 @@ try {
     onProgress: progress,
     onSignals: next => {
       projectedSignals = next;
-      signalLayer.update(projectedSignals, !desiredRoute, { calm, calmByPreference });
+      signalLayer.update(projectedSignals, !desiredRoute, { calm });
     },
     onActivity: (points, enabled) => activityView.setProjected(points, enabled && desiredRoute === 'activity'),
     onTransition: () => {

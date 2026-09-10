@@ -35,15 +35,13 @@ export function applyProjectedPosition(element, projected, enabled) {
   }
 }
 
-// Stillness has two causes and they deserve different answers. Someone who
-// asked their system for reduced motion still needs a way to reach the labs,
-// so they get the plain list. Someone who pressed Pause asked for a quiet
-// scene, not a panel of links — they get nothing, and resuming brings the
-// signals back.
-export function getLayerMode({ enabled, calm, failed, calmByPreference = false }) {
+// A still scene is a quiet one: no signals, and no panel standing in for them.
+// The list survives only where it is the sole route to the labs, which is when
+// WebGL has failed and there is no scene at all.
+export function getLayerMode({ enabled, calm, failed }) {
   if (!enabled) return 'hidden';
   if (failed) return 'fallback';
-  if (calm) return calmByPreference ? 'list' : 'hidden';
+  if (calm) return 'hidden';
   return 'signals';
 }
 
@@ -119,14 +117,12 @@ export function createSignalLayer({ root, fallback, intro, signals, coarsePointe
   document.addEventListener('keydown', onKey);
 
   return {
-    update(projected, enabled = true, { calm = false, calmByPreference = false } = {}) {
-      const mode = getLayerMode({ enabled, calm, failed, calmByPreference });
+    update(projected, enabled = true, { calm = false } = {}) {
+      const mode = getLayerMode({ enabled, calm, failed });
       const positions = new Map(projected.map(item => [item.id, item]));
       for (const [id, link] of links) applyProjectedPosition(link, positions.get(id), mode === 'signals');
       root.hidden = mode !== 'signals';
-      fallback.hidden = mode !== 'list' && mode !== 'fallback';
-      if (mode === 'list' && !fallback.innerHTML) fallback.innerHTML = createFallbackMarkup(intro, signals);
-      fallback.classList.toggle('is-calm-list', mode === 'list');
+      fallback.hidden = mode !== 'fallback';
       if (mode !== 'signals' || (state.selectedId && links.get(state.selectedId)?.hidden)) hidePreview();
     },
     dismiss: hidePreview,

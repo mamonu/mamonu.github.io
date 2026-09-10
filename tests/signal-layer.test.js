@@ -50,20 +50,14 @@ test('projection application exposes visible links and hides inactive ones', () 
   assert.equal(element.style.display, 'none');
 });
 
-test('layer mode preserves every destination for failed graphics and reduced motion', () => {
+test('a still scene shows no panel, however it came to be still', () => {
   assert.equal(getLayerMode({ enabled: true, calm: false, failed: false }), 'signals');
-  assert.equal(getLayerMode({ enabled: true, calm: true, failed: false, calmByPreference: true }), 'list');
+  // Pause, or a reduced-motion preference: either way, nothing replaces the signals.
+  assert.equal(getLayerMode({ enabled: true, calm: true, failed: false }), 'hidden');
+  // Losing WebGL is the one case that still needs the list, as there is no scene.
   assert.equal(getLayerMode({ enabled: true, calm: false, failed: true }), 'fallback');
+  assert.equal(getLayerMode({ enabled: true, calm: true, failed: true }), 'fallback');
   assert.equal(getLayerMode({ enabled: false, calm: true, failed: false }), 'hidden');
-});
-
-test('pausing motion by hand hides the panel; a reduced-motion preference does not', () => {
-  // The Pause button asks for a quiet scene, so nothing replaces the signals.
-  assert.equal(getLayerMode({ enabled: true, calm: true, failed: false, calmByPreference: false }), 'hidden');
-  // A system preference still needs a reachable route to the labs.
-  assert.equal(getLayerMode({ enabled: true, calm: true, failed: false, calmByPreference: true }), 'list');
-  // Losing WebGL always falls back, however the scene came to be still.
-  assert.equal(getLayerMode({ enabled: true, calm: true, failed: true, calmByPreference: false }), 'fallback');
 });
 
 test('disabled layers remove visible signals from keyboard navigation', () => {
