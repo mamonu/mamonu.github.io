@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { LAB_INTRO, LAB_SIGNALS } from '../src/labs-signals.js';
-import { applyProjectedPosition, createFallbackMarkup, createIntroMarkup, createSignalMarkup, getLayerMode, transmissionOpacity } from '../src/signal-layer.js';
+import { applyProjectedPosition, createFallbackMarkup, createSignalMarkup, getLayerMode } from '../src/signal-layer.js';
 
 test('signal markup is a safe labelled external link', () => {
   const signal = LAB_SIGNALS[0];
@@ -27,11 +27,12 @@ test('fallback markup exposes the introduction and every destination', () => {
   for (const signal of LAB_SIGNALS) assert.match(html, new RegExp(signal.url));
 });
 
-test('introduction names every current plugin', () => {
-  const html = createIntroMarkup(LAB_INTRO, LAB_SIGNALS);
-  for (const title of ['RandoNoteAndHold', 'ProbDropoutMidi', 'ChaosMouse', 'DataHell']) {
-    assert.match(html, new RegExp(title));
-  }
+test('nothing announces the labs before the journey reaches them', async () => {
+  const layer = await import('../src/signal-layer.js');
+  assert.equal(layer.createIntroMarkup, undefined);
+  assert.equal(layer.transmissionOpacity, undefined);
+  const markup = LAB_SIGNALS.map(layer.createSignalMarkup).join('');
+  assert.doesNotMatch(markup, /labs-transmission|labs-plugin-names/);
 });
 
 test('projection application exposes visible links and hides inactive ones', () => {
@@ -47,13 +48,6 @@ test('projection application exposes visible links and hides inactive ones', () 
   assert.equal(element.hidden, true);
   assert.equal(element.tabIndex, -1);
   assert.equal(element.style.display, 'none');
-});
-
-test('transmission appears only around the introduction depth', () => {
-  assert.equal(transmissionOpacity(0.2), 0);
-  assert.equal(transmissionOpacity(0.35), 1);
-  assert.equal(transmissionOpacity(0.5), 0);
-  assert.ok(transmissionOpacity(0.3) > 0 && transmissionOpacity(0.3) < 1);
 });
 
 test('layer mode preserves every destination for calm and failed graphics', () => {

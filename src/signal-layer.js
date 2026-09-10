@@ -24,14 +24,6 @@ export function createFallbackMarkup(intro, signals) {
   return `<section class="labs-fallback"><small>${escapeHtml(intro.eyebrow)}</small><h2>${escapeHtml(intro.heading)}</h2><p>${escapeHtml(intro.summary)}</p><a href="${escapeHtml(intro.url)}" target="_blank" rel="noopener noreferrer">visit mamonulabs ↗</a><ul>${destinations.map(signal => `<li><a href="${escapeHtml(signal.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(signal.title)} ↗</a></li>`).join('')}</ul></section>`;
 }
 
-// The transmission names what is out there and says nothing about how to reach
-// it. The only door is the deepest signal in the field, and it is found, not
-// signposted.
-export function createIntroMarkup(intro, signals) {
-  const plugins = signals.filter(signal => signal.kind === 'plugin');
-  return `<small>${escapeHtml(intro.eyebrow)}</small><h2>${escapeHtml(intro.heading)}</h2><p>${escapeHtml(intro.summary)}</p><div class="labs-plugin-names">${plugins.map(signal => `<span>${escapeHtml(signal.title)}</span>`).join('')}</div>`;
-}
-
 export function applyProjectedPosition(element, projected, enabled) {
   const visible = Boolean(enabled && projected?.visible);
   element.hidden = !visible;
@@ -43,13 +35,6 @@ export function applyProjectedPosition(element, projected, enabled) {
   }
 }
 
-export function transmissionOpacity(progress) {
-  if (!Number.isFinite(progress) || progress <= 0.28 || progress >= 0.43) return 0;
-  if (progress === 0.35) return 1;
-  if (progress <= 0.35) return (progress - 0.28) / 0.07;
-  return (0.43 - progress) / 0.08;
-}
-
 export function getLayerMode({ enabled, calm, failed }) {
   if (!enabled) return 'hidden';
   if (failed) return 'fallback';
@@ -57,9 +42,8 @@ export function getLayerMode({ enabled, calm, failed }) {
   return 'signals';
 }
 
-export function createSignalLayer({ root, transmission, fallback, intro, signals, coarsePointer = () => false, openUrl = url => window.open(url, '_blank', 'noopener,noreferrer') }) {
+export function createSignalLayer({ root, fallback, intro, signals, coarsePointer = () => false, openUrl = url => window.open(url, '_blank', 'noopener,noreferrer') }) {
   root.innerHTML = `${signals.map(createSignalMarkup).join('')}<div class="signal-preview" role="status" hidden></div>`;
-  transmission.innerHTML = createIntroMarkup(intro, signals);
   const preview = root.querySelector('.signal-preview');
   const links = new Map([...root.querySelectorAll('[data-signal]')].map(link => [link.dataset.signal, link]));
   const byId = new Map(signals.map(signal => [signal.id, signal]));
@@ -130,13 +114,11 @@ export function createSignalLayer({ root, transmission, fallback, intro, signals
   document.addEventListener('keydown', onKey);
 
   return {
-    update(projected, progress, enabled = true, { calm = false } = {}) {
+    update(projected, enabled = true, { calm = false } = {}) {
       const mode = getLayerMode({ enabled, calm, failed });
       const positions = new Map(projected.map(item => [item.id, item]));
       for (const [id, link] of links) applyProjectedPosition(link, positions.get(id), mode === 'signals');
       root.hidden = mode !== 'signals';
-      transmission.style.opacity = String(mode === 'signals' ? transmissionOpacity(progress) : 0);
-      transmission.hidden = mode !== 'signals' || transmissionOpacity(progress) === 0;
       fallback.hidden = mode !== 'list' && mode !== 'fallback';
       if (mode === 'list' && !fallback.innerHTML) fallback.innerHTML = createFallbackMarkup(intro, signals);
       fallback.classList.toggle('is-calm-list', mode === 'list');
@@ -147,7 +129,6 @@ export function createSignalLayer({ root, transmission, fallback, intro, signals
       failed = true;
       hidePreview();
       root.hidden = true;
-      transmission.hidden = true;
       fallback.innerHTML = createFallbackMarkup(intro, signals);
       fallback.hidden = false;
     },

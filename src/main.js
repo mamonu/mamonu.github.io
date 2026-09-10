@@ -16,7 +16,6 @@ let calm = reducedMotion.matches;
 let scene = null;
 let graphicsFailed = false;
 let desiredRoute = routeFromHash(location.hash);
-let currentProgress = 0;
 let projectedSignals = [];
 const activityRoot = document.querySelector('#activity');
 let activityDays = [], activityYear = null, activityDate = null;
@@ -32,7 +31,6 @@ const activityView = createActivityView({
 });
 const signalLayer = createSignalLayer({
   root: document.querySelector('#signal-layer'),
-  transmission: document.querySelector('#labs-transmission'),
   fallback: document.querySelector('#signal-fallback'),
   intro: LAB_INTRO,
   signals: LAB_SIGNALS,
@@ -75,18 +73,17 @@ function settled(key) {
 }
 
 function progress(value) {
-  currentProgress = value;
   document.documentElement.style.setProperty('--progress', value);
   document.body.classList.toggle('is-deep', value > 0.15);
   document.body.classList.toggle('is-at-end', value > 0.88);
   stage.inert = value > 0.15 || Boolean(desiredRoute);
   document.querySelector('#depth').textContent = String(Math.round(value * 100)).padStart(2, '0');
-  signalLayer.update(projectedSignals, value, !desiredRoute, { calm });
+  signalLayer.update(projectedSignals, !desiredRoute, { calm });
 }
 
 function navigate(key, push = true) {
   desiredRoute = key;
-  signalLayer.update(projectedSignals, currentProgress, !key, { calm });
+  signalLayer.update(projectedSignals, !key, { calm });
   const hash = key ? `#${key}` : '#home';
   if (push && location.hash !== hash) history.pushState({}, '', hash);
   if (scene && !graphicsFailed) scene.navigate(key);
@@ -123,7 +120,7 @@ function updateMotion() {
   document.querySelector('#explore-hint').textContent = calm ? 'A MOMENT OF STILLNESS' : 'MOVE TO EXPLORE';
   scene?.setCalm(calm);
   activityView.setCalm(calm);
-  signalLayer.update(projectedSignals, currentProgress, !desiredRoute, { calm });
+  signalLayer.update(projectedSignals, !desiredRoute, { calm });
   if (!desiredRoute && calm) scrollTo(0, 0);
 }
 motion.addEventListener('click', () => { calm = !calm; updateMotion(); });
@@ -158,7 +155,7 @@ try {
     onProgress: progress,
     onSignals: next => {
       projectedSignals = next;
-      signalLayer.update(projectedSignals, currentProgress, !desiredRoute, { calm });
+      signalLayer.update(projectedSignals, !desiredRoute, { calm });
     },
     onActivity: (points, enabled) => activityView.setProjected(points, enabled && desiredRoute === 'activity'),
     onTransition: () => {
