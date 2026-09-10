@@ -24,11 +24,12 @@ export function createFallbackMarkup(intro, signals) {
   return `<section class="labs-fallback"><small>${escapeHtml(intro.eyebrow)}</small><h2>${escapeHtml(intro.heading)}</h2><p>${escapeHtml(intro.summary)}</p><a href="${escapeHtml(intro.url)}" target="_blank" rel="noopener noreferrer">visit mamonulabs ↗</a><ul>${destinations.map(signal => `<li><a href="${escapeHtml(signal.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(signal.title)} ↗</a></li>`).join('')}</ul></section>`;
 }
 
-// The transmission announces the labs; it no longer links to them. The only
-// door is the deepest signal in the field, so the journey has somewhere to end.
+// The transmission names what is out there and says nothing about how to reach
+// it. The only door is the deepest signal in the field, and it is found, not
+// signposted.
 export function createIntroMarkup(intro, signals) {
   const plugins = signals.filter(signal => signal.kind === 'plugin');
-  return `<small>${escapeHtml(intro.eyebrow)}</small><h2>${escapeHtml(intro.heading)}</h2><p>${escapeHtml(intro.summary)}</p><div class="labs-plugin-names">${plugins.map(signal => `<span>${escapeHtml(signal.title)}</span>`).join('')}</div><em class="labs-cue">the way in is deeper <span aria-hidden="true">↓</span></em>`;
+  return `<small>${escapeHtml(intro.eyebrow)}</small><h2>${escapeHtml(intro.heading)}</h2><p>${escapeHtml(intro.summary)}</p><div class="labs-plugin-names">${plugins.map(signal => `<span>${escapeHtml(signal.title)}</span>`).join('')}</div>`;
 }
 
 export function applyProjectedPosition(element, projected, enabled) {
