@@ -1,3 +1,22 @@
+// The writings list is generated from src/data/writings.json, refreshed from the
+// Hashnode feed by `pnpm writings:update`. Edit the data, not the markup.
+import writings from './data/writings.json' with { type: 'json' };
+import { formatWritingDate, sortPosts, validateWritings } from './writings-data.js';
+
+validateWritings(writings);
+
+const escapeHtml = value => String(value)
+  .replaceAll('&', '&amp;')
+  .replaceAll('<', '&lt;')
+  .replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;')
+  .replaceAll("'", '&#39;');
+
+export function writingsList(posts = writings.posts) {
+  const entries = sortPosts(posts).map(post => `<li><a href="${escapeHtml(post.url)}" target="_blank" rel="noopener noreferrer"><time datetime="${escapeHtml(post.date)}">${escapeHtml(formatWritingDate(post.date))}</time>${escapeHtml(post.title)} <span>↗</span></a></li>`).join('');
+  return `<ul class="archive-list writings-list">${entries}</ul>`;
+}
+
 // The scene carries the identity; these panels hold the detail on demand.
 export const pages = {
   about: {
@@ -50,15 +69,7 @@ export const pages = {
       <p class="lead">Data systems, software engineering and small machines doing surprisingly large things.</p>
       <div class="signal-group">
         <div class="signal-label">LATEST ON mamonu DEV BLOG</div>
-        <ul class="archive-list writings-list">
-          <li><a href="https://mamonu.hashnode.dev/trusting-local-llms-with-code-building-little-llms-bench" target="_blank" rel="noopener noreferrer"><time datetime="2026-09-10">10 SEP 2026 · 9 MIN</time>Trusting Local LLMs with Code: Building little-llms-bench <span>↗</span></a></li>
-          <li><a href="https://mamonu.hashnode.dev/running-large-moe-llms-on-modest-hardware-with-freetoken" target="_blank" rel="noopener noreferrer"><time datetime="2026-09-10">10 SEP 2026 · 15 MIN</time>Running Large MoE LLMs on Modest Hardware with FreeToken <span>↗</span></a></li>
-          <li><a href="https://mamonu.hashnode.dev/using-a-mac-mini-2012-for-llm-inference-with-koboldcpp" target="_blank" rel="noopener noreferrer"><time datetime="2026-09-09">09 SEP 2026 · 9 MIN</time>Using a mac mini (2012) for LLM inference with KoboldCpp <span>↗</span></a></li>
-          <li><a href="https://mamonu.hashnode.dev/testing-using-property-based-tests" target="_blank" rel="noopener noreferrer"><time datetime="2026-09-03">03 SEP 2026 · 5 MIN</time>Testing using Property Based Tests <span>↗</span></a></li>
-          <li><a href="https://mamonu.hashnode.dev/turning-a-dell-optiplex-7060-sff-into-a-cheap-local-ai-inference-box" target="_blank" rel="noopener noreferrer"><time datetime="2026-08-23">23 AUG 2026 · 11 MIN</time>Turning a Dell OptiPlex 7060 SFF into a Cheap Local AI Inference Box <span>↗</span></a></li>
-          <li><a href="https://mamonu.hashnode.dev/running-a-a-27b-model-in-3-5-gb-vram" target="_blank" rel="noopener noreferrer"><time datetime="2026-08-22">22 AUG 2026 · 12 MIN</time>Running a 27B Model in 3.5 GB VRAM <span>↗</span></a></li>
-          <li><a href="https://mamonu.hashnode.dev/exposing-an-lm-studio-server-running-in-wsl2-to-your-lan" target="_blank" rel="noopener noreferrer"><time datetime="2026-08-22">22 AUG 2026 · 15 MIN</time>Exposing an LM Studio Server Running in WSL2 to Your LAN <span>↗</span></a></li>
-        </ul>
+        ${writingsList()}
         <a class="profile-link" href="https://mamonu.hashnode.dev/" target="_blank" rel="noopener noreferrer">All writing on Hashnode ↗</a>
       </div>
       <div class="writing-feature">
