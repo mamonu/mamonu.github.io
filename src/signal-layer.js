@@ -35,10 +35,15 @@ export function applyProjectedPosition(element, projected, enabled) {
   }
 }
 
-export function getLayerMode({ enabled, calm, failed }) {
+// Stillness has two causes and they deserve different answers. Someone who
+// asked their system for reduced motion still needs a way to reach the labs,
+// so they get the plain list. Someone who pressed Pause asked for a quiet
+// scene, not a panel of links — they get nothing, and resuming brings the
+// signals back.
+export function getLayerMode({ enabled, calm, failed, calmByPreference = false }) {
   if (!enabled) return 'hidden';
   if (failed) return 'fallback';
-  if (calm) return 'list';
+  if (calm) return calmByPreference ? 'list' : 'hidden';
   return 'signals';
 }
 
@@ -114,8 +119,8 @@ export function createSignalLayer({ root, fallback, intro, signals, coarsePointe
   document.addEventListener('keydown', onKey);
 
   return {
-    update(projected, enabled = true, { calm = false } = {}) {
-      const mode = getLayerMode({ enabled, calm, failed });
+    update(projected, enabled = true, { calm = false, calmByPreference = false } = {}) {
+      const mode = getLayerMode({ enabled, calm, failed, calmByPreference });
       const positions = new Map(projected.map(item => [item.id, item]));
       for (const [id, link] of links) applyProjectedPosition(link, positions.get(id), mode === 'signals');
       root.hidden = mode !== 'signals';
