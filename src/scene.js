@@ -26,7 +26,7 @@ import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
-import { LAB_SIGNALS } from './labs-signals.js';
+import { CHAIN_KINDS, LAB_SIGNALS } from './labs-signals.js';
 import { isSignalActive, projectSignal } from './signal-projection.js';
 import { createActivityScene } from './activity-scene.js';
 
@@ -164,6 +164,55 @@ const signalStars = LAB_SIGNALS.map((signal, index) => {
   scene.add(point);
   return { signal, point, position: new THREE.Vector3(nx * 6, ny * 4.2, depthZ + nz * 2) };
 });
+
+// ── Infobit thread ──
+// The infobits are one continuous strand that terminates at the labs. A smooth
+// curve through their stars is sampled once; each frame only the per-vertex
+// colour changes, so a glow travels the thread as you descend. Additive
+// blending means a black vertex is simply invisible, which is the fade.
+const THREAD_SAMPLES = 160;
+const THREAD_RADIUS = 0.16; // wider than the signal radius: the thread leads before the labels arrive
+const THREAD_TINT = new THREE.Color(0xc49aff);
+const threadChain = signalStars
+  .filter(({ signal }) => CHAIN_KINDS.has(signal.kind))
+  .sort((a, b) => a.signal.depth - b.signal.depth);
+let thread = null, threadDepths = null, threadColors = null;
+if (threadChain.length > 1) {
+  const curve = new THREE.CatmullRomCurve3(threadChain.map(({ position }) => position), false, 'centripetal', 0.5);
+  const points = curve.getPoints(THREAD_SAMPLES);
+  const geometry = new THREE.BufferGeometry().setFromPoints(points);
+  threadColors = new Float32Array(points.length * 3);
+  geometry.setAttribute('color', new THREE.BufferAttribute(threadColors, 3));
+  // Recover each sample's journey depth from its z, the inverse of depthZ above.
+  threadDepths = points.map(({ z }) => Math.min(Math.max((-8 - z) / 8, 0), 1));
+  thread = new THREE.Line(geometry, new THREE.LineBasicMaterial({
+    vertexColors: true,
+    transparent: true,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  }));
+  thread.frustumCulled = false;
+  scene.add(thread);
+}
+
+function updateThread(visible, atProgress, time, still) {
+  if (!thread) return;
+  thread.visible = visible;
+  if (!visible) return;
+  for (let i = 0; i < threadDepths.length; i += 1) {
+    const distance = Math.abs(threadDepths[i] - atProgress);
+    const falloff = Math.max(0, 1 - distance / THREAD_RADIUS);
+    // Quadratic falloff: bright enough to read against the particle field,
+    // still soft enough at the tails that the thread has no visible ends.
+    const travel = still ? falloff * falloff * 0.6 : falloff * falloff;
+    const shimmer = still ? 1 : 0.82 + Math.sin(time * 1.6 - threadDepths[i] * 26) * 0.18;
+    const intensity = travel * shimmer;
+    threadColors[i * 3] = THREAD_TINT.r * intensity;
+    threadColors[i * 3 + 1] = THREAD_TINT.g * intensity;
+    threadColors[i * 3 + 2] = THREAD_TINT.b * intensity;
+  }
+  thread.geometry.attributes.color.needsUpdate = true;
+}
 
 // ── Post-processing ──
 const composer = new EffectComposer(renderer);
@@ -416,6 +465,7 @@ function animate() {
     return { id: signal.id, ...projected, visible: active && projected.visible };
   });
   onSignals(signalProjection);
+  updateThread(pageState === 'home' && !transitioning, progress, time, calm);
 
   activityScene.group.visible = pageState === 'activity';
   renderPass.camera = activityScene.group.visible ? activityScene.camera : camera;
@@ -439,6 +489,7 @@ return { navigate, setCalm,
   dispose() {
   disposed = true; cancelAnimationFrame(frameId);
   for (const { point } of signalStars) { point.geometry.dispose(); point.material.dispose(); }
+  if (thread) { thread.geometry.dispose(); thread.material.dispose(); }
   activityScene.dispose();
   composer.dispose(); renderer.dispose(); renderer.domElement.remove();
 } };
