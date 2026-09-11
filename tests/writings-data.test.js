@@ -14,7 +14,8 @@ const post = (url, published, extra = {}) => ({
 
 test('the shipped archive is valid and newest first', () => {
   assert.equal(validateWritings(writings), writings);
-  assert.ok(writings.posts.length >= 7);
+  // A count, not a floor: posts get unpublished sometimes.
+  assert.ok(writings.posts.length > 0);
   assert.deepEqual(writings.posts, sortPosts(writings.posts));
 });
 
